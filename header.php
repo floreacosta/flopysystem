@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC>
 <?php
-include("core/functions.php");
+include_once("core/functions.php");
 ?>
 <head>
     <title>Flopy System Computación</title>

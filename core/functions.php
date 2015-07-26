@@ -3,17 +3,17 @@ include("init.php");
 	
 function menuDesplegable(){
 	
-		$con = mysqli_connect("localhost","root","","flopysystem");
-		//$con = mysqli_connect("us76.toservers.com:3306","uv3721","sudor503plano","uv3721_carrito_compras");
-		mysql_query("SET NAMES 'utf8'");
+		include_once("conexion/conexion.php");
+	
+		$db = callDb();
 	
 		$get_cats= 'SELECT * FROM category1';
 		$get_cats2 = 'SELECT * FROM category2';
 		$get_cats3 = 'SELECT * FROM category3';
 		
-		$run_cats = mysqli_query($con, $get_cats);
-		$run_cats2 = mysqli_query($con, $get_cats2);
-		$run_cats3 = mysqli_query($con, $get_cats3);
+		$run_cats = mysqli_query($db, $get_cats);
+		$run_cats2 = mysqli_query($db, $get_cats2);
+		$run_cats3 = mysqli_query($db, $get_cats3);
 
 		//Aca empiezo a recorrer cada resultado de la tabla1
 		while($row_cats=mysqli_fetch_array($run_cats)){
@@ -25,7 +25,7 @@ function menuDesplegable(){
 			//imprimo todos los titulos de la tabla1
 			echo "  
 			<li>
-			<a class='' id='$cat_title' href='/product.php?id_categoria1=$cat_id'> $cat_title </a>
+			<a class='' id='$cat_title' href='/product.php?id_categoria1=$cat_id&nombreSec=$cat_title'> $cat_title </a>
 			
 			";
 			
@@ -58,7 +58,7 @@ function menuDesplegable(){
 						$('#$cat_title').addClass('item');
 					</script>
 					<li>
-					<a class='' id='$cat2_title' href='/product.php?id_categoria2=$cat2_id'> $cat2_title </a>
+					<a class='' id='$cat2_title' href='/product.php?id_categoria2=$cat2_id&nombreSec=$cat2_title'> $cat2_title </a>
 					";
 				echo "<ul>";
 				//Hago la misma logica, pero relacionando la tabla3 con la tabla2
@@ -73,7 +73,7 @@ function menuDesplegable(){
 						$('#$cat2_title').addClass('item');
 					</script>
 					<li>
-						<a class='' href='/product.php?id_categoria3=$cat3_id'> $cat3_title </a>
+						<a class='' href='/product.php?id_categoria3=$cat3_id&nombreSec=$cat3_title'> $cat3_title </a>
 					</li>";
 						}
 					}
@@ -84,78 +84,123 @@ function menuDesplegable(){
 		}
 }
 
-function getPorCategoriaById(){
-		
+function getSeccionPorCategoriaMenu(){
 	
-	mysql_query("SET NAMES 'utf8'");
-	if(isset($_GET['id_categoria1'])){		
-		$category_id = $_GET['id_categoria1'];
-		$re=mysql_query("SELECT * FROM products WHERE id_category1 = '$category_id'")or die(mysql_error());
+	include_once("conexion/conexion.php");
+	
+	$db = callDb();
+
+	$show_categoria = '';
+	
+	if(isset($_GET['id_categoria1'])){
+		$show_categoria = $_GET['id_categoria1'];
+		$tipo_categoria = 'id_category1';
 	}
 	
 	if(isset($_GET['id_categoria2'])){
-		$category_id = $_GET['id_categoria2'];
-		$re=mysql_query("SELECT * FROM products WHERE id_category2 = '$category_id'")or die(mysql_error());	
+		$show_categoria = $_GET['id_categoria2'];
+		$tipo_categoria = 'id_category2';
 	}
 	
 	if(isset($_GET['id_categoria3'])){
-		$category_id = $_GET['id_categoria3'];
-		$re=mysql_query("SELECT * FROM products WHERE id_category3 = '$category_id'")or die(mysql_error());
+		$show_categoria = $_GET['id_categoria3'];
+		$tipo_categoria = 'id_category3';
 	}
+		
+	if($show_categoria != ''){	
 	
-	while ($f=mysql_fetch_array($re)){
-
-		echo "<h1> </h1><a href='/index.php'>| back</a>
-			<section class='grilla'>
-				<ul class='item-catalogo'>
-					<li>
-						<figure>
-							<img src='img-productos/' >
-								<figcaption>
-									<span></span>
-									<br><br>
-										<span class='precio'>Precio web: <p></p></span>
-										<a class='ver' href='menu/detalles/details.php?id='>+</a>
-								</figcaption>
-						</figure>
-					</li>";
-	}
-
-	
-	/*	
-		global $con;
-		
-		$get_pro = "SELECT * FROM products WHERE product_id = '$product_id'";
-
-		$run_pro = mysqli_query($con, $get_pro);
-		
-		//var_dump($run_pro);
-		
-		while($row_pro=mysqli_fetch_array($run_pro)){
+		$tituloSeccion = $_GET['nombreSec'];
+		$show_categoria = (int)$show_categoria;
 			
-			$product_id = $row_pro['product_id'];
-			$product_category = $row_pro['product_category'];
-			$product_brand = $row_pro['product_brand'];
-			$product_title = $row_pro['product_title'];
-			$product_price = $row_pro['product_price'];
-			$product_desc = $row_pro['product_desc'];
-			$product_image = $row_pro['product_image'];
-			$product_keywords = $row_pro['product_keywords'];
+		$get_categoria = "SELECT * FROM products where $tipo_categoria = '$show_categoria'";
+		$run_categoria = mysqli_query($db, $get_categoria);
+		
+		echo"
+			<section class='catalogo'>
+			<div class='container catalogo'>
+				<h1>$tituloSeccion</h1><a href='http://www.flopysystem.com.ar/index.php'>| back</a>
+					<section class='grilla'>
+						<ul class='item-catalogo'>
+		";
 			
-			echo "
-			<div id='single_product'>
-				<h3>$product_title</h3>
-				<img alt='$product_desc' src='admin_area/product_images/$product_image' width='400' height='400' />
-				<p><b> $product_price </b></p>
-				<p> $product_desc </p>
-				<a href='index.php'>Go back</a>
-				<a href='index.php?pro_id=$product_id'><button style='float:right'>Add to Cart</button></a>
-			</div>
+		while ($producto=mysqli_fetch_array($run_categoria)){
 			
+			$producto_id = $producto['id_products'];
+			$producto_titulo = ucfirst($producto['product_title']);	
+			$producto_detalles = $producto['product_details'];
+			$producto_imagen_thumb = $producto['product_thumbs'];
+			$producto_imagen = $producto['product_image'];
+			$producto_precio = $producto['product_price'];
+			
+			
+			echo "		
+				<li>
+					<figure>
+						<img src='img-productos/$producto_imagen' >
+							<figcaption>
+								<span>$producto_titulo</span>
+								<br><br>
+									<span class='precio'>Precio web: <p>$producto_precio</p></span>
+									<a class='ver' href='/details.php?id=$producto_id'>+</a>
+							</figcaption>
+					</figure>
+				</li>
 			";
 		}
+			
+		echo"
+					</ul>
+				</section>
+			</div>
+		</section>
+		";
+	}	
+}
+
+
+function showDetalleProducto(){
+	
+	include_once("conexion/conexion.php");
+	
+	$db = callDb();
+	
+	$id_producto = $_GET['id'];
+	$id_producto = (int)$id_producto;
 		
-	}*/
+	$get_producto = "SELECT * FROM products where id_products = '$id_producto'";
+	$run_producto = mysqli_query($db, $get_producto);
+	
+	while ($producto=mysqli_fetch_array($run_producto)){
+			
+		$producto_titulo = ucfirst($producto['product_title']);	
+		$producto_detalles = $producto['product_details'];
+		$producto_imagen_thumb = $producto['product_thumbs'];
+		$producto_imagen = $producto['product_image'];
+		$producto_precio = $producto['product_price'];
+			
+		echo"
+			<section class='catalogo'>
+				<div class='container catalogo detalles'>
+					<section>
+						<h1>$producto_titulo</h1>
+						<h2>| Test</h2>
+						<span>| 
+							<a href='/'>back</a>
+						</span>
+						<aside>
+							<h4 class='cuotas'></h4>
+							<h4>$$producto_precio</h4>
+						</aside>
+					</section>
+					<br />
+					<div class='contenido-descripcion'>
+						<img src='img-productos/$producto_imagen' />
+						<p>$producto_detalles</p>  
+					</div>
+				</div>
+			</section>
+		";
+	}
 }
 
 
