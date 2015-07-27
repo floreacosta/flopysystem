@@ -19,6 +19,12 @@
 			die();
 		}
 		
+		if (!$db->set_charset("utf8")) {
+			printf("Error cargando el conjunto de caracteres utf8: %s\n", $db->error);
+		} else {
+			printf("Conjunto de caracteres actual: %s\n", $db->character_set_name());
+		}
+		
 		return $db;
 	}
 ?>
