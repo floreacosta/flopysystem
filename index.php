@@ -1,66 +1,82 @@
-<?php include '/header.php'; ?>
-<div class="container">
-	<section class="home">
-    	<div>
-        	<h1 class="in">¡Entraron!</h1>
-            <h1><a href="/menu/detalles/det-cargador-universal.php?id=1">Cargador universal<br/>para notebooks!</a></h1>
-            <p>Buscá los productos seleccionados en nuestro catálogo. Consultanos por stock, mejoramos cualquier costo y ofrecemos servicio personalizado para resolver todas tus dudas. Hacemos envíos a todo el país, respondemos consultas por mail las 24hs.
-            </p>
-    	</div>
-    </section>
-
-	<section class="tit-mobile">
-    	<div>
-            <h1 class="news-mobile"><a href="/menu/detalles/det-cargador-universal.php?id=1">¡Entraron!<br>Cargadores universales para notebooks!</a></h1>
-            <p class="news-mobile">Buscá los productos seleccionados en nuestro catálogo. Consultanos por stock, mejoramos cualquier costo y ofrecemos servicio personalizado para resolver todas tus dudas. Hacemos envíos a todo el país, respondemos consultas por mail las 24hs.
-            </p>
-    	</div>
-    </section>
-
-    <section class="news">
-    <div>
-    	<h2>Recomendaciones de la semana</h2>
-        
-        <div>
 <?php
-	include 'conexion/conexion.php';
-	mysql_query("SET NAMES 'utf8'");
-	$re=mysql_query("select * from novedades")or die(mysql_error());
-	while ($f=mysql_fetch_array($re)){
+include_once("/include_extra/head.php");
 ?>
-        	<figure>
-            	<a href="<?php echo $f['link'];?>"><img class="news-img" src="img-productos/<?php echo $f['imagen'];?>"/></a>
-                <figcaption>
-                	<h6><?php echo $f['titulo'];?></h6>
-                    <h7><?php echo $f['descripcion'];?></h7>
-                </figcaption>
-            </figure>
-<?php
-}
-?>
-        </div>
-        </div>
-    </section>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/media_querys3.css"/>
+</head>
 
-    <section class="location">
-    <div>
-    		<a name="location"></a><h2>Ubicación</h2>
-            <div class="googlemap">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3283.588012814517!2d-58.52583500000001!3d-34.61457800000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7deb2abf3b5%3A0x2172c59c105977f9!2sFlopy+System+Computaci%C3%B3n!5e0!3m2!1ses!2sar!4v1417983238543">
-            </iframe>
-       		</div>
-        
-            <div class="location-text">
-                <h3>Av. Francisco Beiró 5340</h3>
-                <h3 class="aclar">Galería Beiró, Local 11 / Devoto</h3>
-                <h4>+(011) 4639-3713<br />
-                    <a href="mailto:ventas@flopysystem.com.ar">ventas@flopysystem.com.ar</a>
-                </h4>
-                <h5>Horarios de Atención:<br />
-                    Lunes A Viernes de 9 a 13hs. y 16 a 20hs.<br />
-                    Sábados de 9 a 14hs.
-                </h5>
-           </div>
-    </div>
-    </section>
-<?php include '/footer.php'; ?>
+<body>
+
+<?php
+include_once("/include_extra/header.php");
+?>	
+
+<main>
+	<div>
+		<a href="#">
+			<span>¡Entraron!</span>
+			<h1>Cargador Universal para Notebooks!</h1>
+			<p>Buscá los productos seleccionados en nuestro catálogo. Consultanos por stock, mejoramos cualquier costo y ofrecemos servicio personalizado para resolver todas tus dudas. Hacemos envíos a todo el país, respondemos consultas por mail las 24hs.</p>
+		</a>
+	</div>
+</main>
+
+	<div class="responsive">
+		<a href="#">
+			<span>¡Entraron!</span>
+			<h1>Cargador Universal para Notebooks!</h1>
+			<p>Buscá los productos seleccionados en nuestro catálogo. Consultanos por stock, mejoramos cualquier costo y ofrecemos servicio personalizado para resolver todas tus dudas. Hacemos envíos a todo el país, respondemos consultas por mail las 24hs.</p>
+		</a>
+	</div>
+
+
+<section class="recomendacion">
+	<h1>Recomendaciones de la semana</h1>
+	<div>
+		<figure><!-- Recomendacion 1 -->
+			<img src="img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
+			<figcaption>
+				<a href="#"><h2>Micrófono de pie FOG-800</h2></a>
+				<p>Micrófono de pie multimedia con cuerpo flexible y cómoda base para escritorio. Utilizable para video-conferencias y dictador por voz.</p>
+			</figcaption>
+		</figure>
+		<figure><!-- Recomendacion 2 -->
+			<img src="img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
+			<figcaption>
+				<a href="#"><h2>Micrófono de pie FOG-800</h2></a>
+				<p>Micrófono de pie multimedia con cuerpo flexible y cómoda base para escritorio. Utilizable para video-conferencias y dictador por voz.</p>
+			</figcaption>
+		</figure>
+		<figure><!-- Recomendacion 3 -->
+			<img src="img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
+			<figcaption>
+				<a href="#"><h2>Micrófono de pie FOG-800</h2></a>
+				<p>Micrófono de pie multimedia con cuerpo flexible y cómoda base para escritorio. Utilizable para video-conferencias y dictador por voz.</p>
+			</figcaption>
+		</figure>
+		<figure><!-- Recomendacion 4 -->
+			<img src="img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
+			<figcaption>
+				<a href="#"><h2>Micrófono de pie FOG-800</h2></a>
+				<p>Micrófono de pie multimedia con cuerpo flexible y cómoda base para escritorio. Utilizable para video-conferencias y dictador por voz.</p>
+			</figcaption>
+		</figure>
+	</div>
+	<div class="clear"></div>
+</section>
+
+<section class="ubicacion"><!-- Ubicacion -->
+	<a name="location"><h1>Ubicación</h1></a>
+	<div>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.588012814517!2d-58.52583500000004!3d-34.61457800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7deb2abf3b5%3A0x2172c59c105977f9!2sFlopy+System+Computaci%C3%B3n!5e0!3m2!1ses!2sar!4v1437746238134" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<div>
+			<address>Av. Francisco Beiró 5340, Galería Beiró, local 11. Devoto.</address>
+			<aside>+(011) 4639-3713<br><a href="mailto:ventas@flopysystem.com.ar?Subject=Consulta%20online">ventas@flopysystem.com.ar</a></aside>
+			<aside class="time">Horarios de atención:<br>Lunes a Viernes de 9 a 13Hs. y 16 A 20Hs.<br>Sábados de 9 a 14Hs.</aside>
+		</div>
+	</div>
+</section>
+
+<?php
+include_once("/include_extra/footer.php");
+?>	

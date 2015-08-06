@@ -1,17 +1,37 @@
-<?php include 'header.php'; ?>
-<section class="catalogo">
-<div class="img-rep"></div>
-<div class="container catalogo">
-	<h5 class="reparacion">Cpu | Impresoras | Notebooks | Tablets | Instalación de software | Actualizaciones | Discos | Monitores | etc.</h5>
-		<br><br>
-	<h2 class="reparacion">Reparaciones y servicio técnico.<br>Asistencia a empresas.</h2>
-		<br><br>
-	<h4 class="reparacion">¡Pedinos un presupuesto o comentanos tu problema y a la brevedad te respondemos con la mejor solución para vos!</h4>
-		<br>
-	<h4 class="reparacion">Contamos con un técnico en reparaciones exclusivo que trabaja constantemente en nuestro local a fin de cumplir con todos los encargos.</h4>
-	<h5 class="reparacion">Escribinos a <a href="mailto:reparaciones@flopysystem.com.ar">reparaciones@flopysystem.com.ar</a></h5>
-</div>
+<?php
+include("/include_extra/head.php");
+?>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/reparaciones.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/media_querys.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/media_querys3.css"/>	
+</head>
+
+<body>
+
+<?php
+include("/include_extra/header.php");
+?>
+
+<section class="reparaciones">
+	<h1>CPU | IMPRESORAS | NOTEBOOKS | TABLETS | INSTALACIÓN DE SOFTWARE | ACTUALIZACIONES | DISCOS | MONITORES | ETC.</h1>
+	<div>
+		<img src="/img/style/reparaciones.jpg"/>
+		<span>
+			<h1>Asistencia a empresas,<br>reparaciones<br>y servicio técnico.</h1>
+			<p>¡Pedinos un presupuesto o comentanos tu problema y a la brevedad te respondemos con la mejor solución para vos!</p>
+			<p>Contamos con un técnico en reparaciones exclusivo que trabaja constantemente en nuestro local a fin de cumplir con todos los encargos.</p>
+			<div>
+				<aside>Escribinos!</aside><a href="mailto:reparaciones@flopysystem.com.ar">reparaciones@flopysystem.com.ar</a>
+			</div>
+		</span>
+	</div>
 </section>
-<div class="footer-into">
-	<?php include 'footer.php'; ?>
+
+<div class="details">
+	<?php
+	include("/include_extra/footer.php");
+	?>
 </div>
+
+</body>

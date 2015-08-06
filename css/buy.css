@@ -1,0 +1,118 @@
+section.details-buy {
+    padding: 0em 1.5em;
+    margin-top: 0;
+}
+
+section.details-buy>h1 {
+    text-align: center;
+    margin: 1em 0em;
+    font-size: 2em;
+}
+
+section.details-buy>section {
+    padding: 0em;
+    margin: 0;
+}
+
+section.details-buy>section.total{
+	margin-bottom: 10em;
+}
+
+section.details-buy>section.unidades>figure {
+    border: solid 1px #A7A9AB;
+    margin-bottom: 1em;
+}
+
+section.details-buy>section.unidades>figure>img {
+    border-bottom: solid 1px #A7A9AB;
+    width: 100%;
+}
+
+section.details-buy>section.unidades>figure>figcaption {
+    margin: 1em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>input[type="submit"] {
+    float: right;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.2em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>div {
+    padding-top: 1.5em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>div>h2 {
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>div>h3 {
+    text-transform: none;
+    color: #000;
+    font-size: 1em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>div>h4 {
+    margin-top: 0.5em;
+    font-size: 1.3em;
+}
+
+/*Compras*/
+
+section.details-buy>section.total {
+    border: solid 1px #E54016;
+    padding: 1em;
+}
+
+section.details-buy>section.total>div.carro {
+    display: inline-block;
+    width: 100%;
+}
+
+section.details-buy>section.total>div.carro>h1 {
+    padding: 0.5em 0em;
+	color: #E54016;
+    font-size: 2em;
+}
+
+section.details-buy>section.total>div.carro>form {
+    padding: 0;
+	width: 100%;
+}
+
+section.details-buy>section.total>div.carro>form.pagar {
+    width: 100%;
+    text-align: center;
+}
+
+section.details-buy>section.total>div.carro>form.datos>input[type="text"],  section.details-buy>section.total>div.carro>form.datos>input[type="email"] {
+    max-width: 100%;
+    height: 2em;
+	width: 100%;
+}
+
+section.details-buy>section.total>div.carro>form.pagar>input[type="submit"] {
+    border: 0;
+    background-color: #E54016;
+    color: #fff;
+    padding: 0.3em 5em;
+    border-radius: 2em;
+    margin: 1em 0em;
+}
+
+section.details-buy>section.total>div.carro>form.datos>input[placeholder="Nombre y Apellido*"],  section.details-buy>section.total>div.carro>form.datos>input[placeholder="Mail*"] {
+    padding-left: 1em;
+}
+
+section.details-buy>section.total>p {
+    display: inline-block;
+    font-size: 0.8em;
+    color: #000;
+    text-transform: none;
+}
+
+section.details-buy>section.total>p.what {
+    margin-top: 0.5em;
+}

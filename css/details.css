@@ -1,0 +1,92 @@
+div.descripcion>span>ul>li{
+	list-style-type:circle;
+}
+
+section.details {
+    padding: 0em 2em;
+    margin: 0;
+    margin-bottom: 10em;
+}
+
+section.details>div {
+    text-align: center;
+}
+
+section.details>div>h1 {
+    padding: 1em 0em 0.5em 0em;
+    font-size: 2em;
+}
+
+section.details>div>p {
+    display: inline-block;
+}
+
+section.details>div>p.back {
+    font-size: 0.7em;
+}
+
+section.details>div.descripcion>div>img {
+    max-width: 100%;
+    margin: 2em 0em;
+}
+
+section.details>div.descripcion>div>p {
+    font-size: 0.7em;
+    text-transform: none;
+}
+
+section.details>div.descripcion>div {
+    padding-bottom: 2em;
+}
+
+section.details>div>span {
+    display: inline-block;
+    border-top: solid 1px;
+}
+
+section.details>div>span>div>h1 {
+    padding: 1em 0em 0.5em 0em;
+    text-transform: none;
+    font-size: 2.5em;
+    line-height: 1em;
+    letter-spacing: 0.05em;
+}
+
+section.details>div>span>div {
+    margin-bottom: 1.5em;
+}
+
+section.details>div>span>ul {
+    padding: 0em 1em;
+}
+
+section.details>div>span>ul>li {
+    text-transform: none;
+    text-align: left;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+section.details>div>span>div.precio {
+    margin: 2em 0em 0.5em 0em;
+}
+
+section.details>div>span>div.precio>span {
+    color: #000;
+    font-size: 1.8em;
+}
+
+section.details>div>span>div.precio>form {
+    padding: 0;
+    width: 100%;
+    margin-top: 1em;
+}
+
+section.details>div>span>div.precio>form>input[type="submit"] {
+    background-color: #E54016;
+    border: 0;
+    color: #fff;
+    width: 100%;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+}

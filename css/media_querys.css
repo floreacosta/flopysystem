@@ -1,0 +1,448 @@
+@media screen and (max-width: 1245px){
+section.ubicacion>div>div>aside.time {
+    font-size: 65%;
+}
+
+section.ubicacion>div>div>address, section.ubicacion>div>div>aside {
+    margin-bottom: 4%;
+}
+}
+
+@media screen and (max-width: 1080px){
+
+/* menu principal HEADER */
+header>div.group>nav, header>div.group>form{
+	float: none;
+    text-align: right;
+	width: 13.1em;
+	display: table-row-group;
+}
+
+ul.desplegable li ul li ul {
+    right: 11.58em;
+}
+
+ul.contenido li.item>a {
+    background: url("/img/style/item.png") #fff no-repeat 2em 1.45em;
+}
+
+nav.menu.productos>ul>li>a {
+    background: url("/img/style/item-hover.png") no-repeat 2.25em;
+	display: inline-block;
+}
+
+nav.menu.productos>ul:hover {
+    background: #fff url("/img/style/item.png") no-repeat 2.25em 2.7em;
+}
+
+/* menu principal HEADER */
+
+/*main principal*/
+
+main>div {
+    width: 60%;
+}
+/*Fin main Principal*/
+
+/*Ubicacion*/
+section.ubicacion>div>iframe {
+    width: 45%;
+}
+
+section.ubicacion>div>div>aside.time {
+    font-size: 60%;
+    margin-top: 5%;
+}
+
+section.ubicacion>div>div>address, section.ubicacion>div>div>aside {
+    margin-bottom: 2.5%;
+}
+
+
+/*Fin Ubicacion*/
+
+/*Reparaciones*/
+section.reparaciones>div>span {
+    margin-bottom: 15%;
+}
+
+section.reparaciones>div>span>h1 {
+    padding: 0em 0em 0.5em 0em;
+    font-size: 2.3em;
+}
+
+section.reparaciones>div>span>p {
+    font-size: 1em;
+}
+
+section.reparaciones>div>span>div {
+    margin: 1.5em 0em;
+    text-align: center;
+    display: inline-block;
+}
+
+section.reparaciones>div>span>div>aside {
+    margin-right: 0em;
+	display: block;
+}
+
+section.reparaciones>div>span>div>a {
+    margin: 0.5em 0em;
+    display: inline-block;
+}
+/*Fin reparaciones*/
+
+}
+
+@media screen and (max-width: 845px){
+/*MAIN*/
+main {
+    height: 70%;
+}
+
+main>div>h1 {
+    font-size: 220%;
+}
+
+main>div {
+    bottom: 20%;
+}
+
+
+/*Fin Main*/
+
+/*Recomendaciones*/
+section.recomendacion>div>figure {
+    margin: 2.5%;
+    width: 45%;
+}
+/*Fin Recomendaciones*/
+
+section.ubicacion>div>div {
+    width: 50%;
+}
+
+section.ubicacion>div>div>address, section.ubicacion>div>div>aside {
+	font-size: 80%;
+	margin-bottom: 8%;
+}
+
+/*Reparaciones*/
+section.reparaciones>div>img {
+    width: 100%;
+	float: none;
+}
+
+section.reparaciones>div>span {
+    width: 100%;
+    margin: 2em 0em;
+    text-align: center;
+    margin-bottom: 10%;
+}
+/*Fin Reparaciones*/
+}
+
+@media screen and (max-width: 635px){
+/*Main*/
+main {
+    height: 55%;
+}
+
+main>div {
+	bottom: 35%;
+    width: 80%;
+}
+
+main>div>span{
+	font-size: 100%;
+}
+
+main>div>h1 {
+    font-size: 145%;
+}
+
+/*Fin Main*/
+
+section.ubicacion {
+    height: 105%;
+}
+
+section.ubicacion>div>iframe {
+    float: none;
+    width: 100%;
+    height: 15em;
+}
+
+section.ubicacion>div>div {
+    width: 100%;
+    text-align: center;
+    margin: 1em 0em;
+}
+
+section.ubicacion>div>div>address, section.ubicacion>div>div>aside {
+    font-size: 100%;
+    margin-bottom: 3%;
+}
+
+/*Reparaciones*/
+section.reparaciones>div {
+    margin-bottom: 20%;
+}
+/*Fin Reparaciones*/
+}
+
+@media screen and (max-width: 603px){
+section {
+    padding: 0em 2em;
+}
+
+section.ubicacion>div>div>address, section.ubicacion>div>div>aside {
+    font-size: 80%;
+}
+
+section.ubicacion {
+    height: 100%;
+}
+}
+@media screen and (max-width: 500px){
+/*Reparaciones*/
+section.reparaciones>div>span>div>a {
+    padding: 0.5em 0.5em;
+    letter-spacing: 0.1em;
+}
+/*Fin reparaciones*/
+}
+
+@media screen and (max-width: 424px){
+/*Main*/
+main {
+    background: url("/img/style/background-home.jpg") no-repeat -10em;
+    background-size: cover;
+}
+
+main>div {
+	bottom: -17%;
+    width: 85%;
+    text-align: left;
+    left: 5%;
+    margin: 0em 0.8em;
+    padding: 1em 0em;
+    border-bottom: solid 1px #A7A9AB;
+}
+
+section.recomendacion {
+    margin-top: 16.5em;
+}
+
+main>div>span, main>div>h1, main>div>p {
+    color: #A7A9AB;
+}
+
+/*Fin Main*/
+section.ubicacion {
+    height: 105%;
+}
+
+section.ubicacion>div>div>aside>a {
+    font-size: 80%;
+}
+}
+
+@media screen and (max-width: 407px){
+/*Recomendaciones*/
+section.recomendacion>div>figure {
+    width: 100%;
+}
+
+section.recomendacion>div>figure>img {
+    width: 100%;
+}
+/*Fin Recomendaciones*/
+
+/*Ubicacion*/
+section.ubicacion {
+    height: 110%;
+}
+/*Fin Ubicacion*/
+}
+
+@media screen and (max-width: 396px){
+main>div {
+    bottom: -25%;
+}
+
+section.recomendacion {
+    margin-top: 19.5em;
+}
+
+/*----------------*/
+
+@media screen and (min-width: 450px){
+section.details-buy>section.unidades>figure>img {
+    border-bottom: 0;
+    border-right: solid 1px #A7A9AB;
+    max-width: 11.9em;
+    float: left;
+	margin-right: 1em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>input[type="submit"] {
+    font-size: 1em;
+}
+
+section.details-buy>section.unidades>figure>figcaption {
+    margin: 0.5em 1em;
+    display: block;
+    height: 7.85em;
+    min-height: 7.9em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>div {
+    padding-top: 1.5em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>div>h2 {
+    line-height: 1em;
+    font-size: 1em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>div>h3 {
+    font-size: 0.8em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>div>h4 {
+    font-size: 1.1em;
+}
+
+}
+
+@media screen and (min-width: 500px){
+section.details-buy>section.unidades>figure>figcaption>div>h3 {
+    font-size: 1.1em;
+}
+
+section.details-buy>section.unidades>figure>figcaption>div>h4 {
+    margin-top: 1em;
+}
+}
+
+@media screen and (min-width: 980px){
+section.details-buy>h1 {
+    text-align: left;
+}
+
+section.details-buy>section.unidades {
+    width: 56%;
+}
+
+section.details-buy>section.total {
+    width: 38%;
+}
+
+section.details-buy>section.unidades {
+    float: left;
+    margin-right: 1.3em;
+	margin-bottom: 5em;
+}
+
+section.details-buy>section.total {
+    display: inline-block;
+}
+
+section.details-buy>section.total>div.carro>form.pagar>input[type="submit"] {
+    width: 100%;
+}
+}
+
+@media screen and (min-width: 1180px){
+section.details-buy {
+    padding: 0em 5em;
+}
+
+
+}
+
+/*DETALLES*/
+
+@media screen and (min-width: 800px){
+section.details>div {
+    text-align: left;
+}
+
+section.details>div>h1 {
+    display: inline-block;
+}
+
+section.details>div.descripcion>div {
+    max-width: 50%;
+	float: left;
+    margin-right: 2em;
+}
+
+section.details>div>span {
+    border-top: 0;
+    max-width: 45%;
+}
+
+section.details>div>span>div>h1 {
+    display: inline-block;
+}
+
+section.details>div>span>div>img {
+    margin-left: 0.5em;
+}
+
+section.details>div>span>div.precio {
+    text-align: center;
+}
+}
+
+@media screen and (min-width: 850px){
+section.details {
+    padding: 0em 5em;
+}
+}
+
+@media screen and (min-width: 1150px){
+section.details>div>span>div.precio {
+    text-align: left;
+}
+
+section.details>div>span>div.precio>span {
+    display: inline-block;
+}
+
+section.details>div>span>div.precio>form {
+    max-width: 45%;
+    margin-top: 0em;
+    float: right;
+}
+
+section.details>div>span>div.precio>form>input[type="submit"] {
+    padding: 0.5em 3em;
+}
+}
+
+/* PRODUCTOS */
+@media screen and (min-width: 900px){
+section.productos {
+    text-align: left;
+}
+
+section.productos>h1 {
+    padding: 0em 0em 0.5em 0em;
+    display: inline-block;
+    font-size: 1.8em;
+    padding-right: 0.5em;
+}
+
+}
+@media screen and (min-width: 1200px){
+section.productos>div>figure {
+    width: 18%;
+}
+
+section.productos {
+    padding: 2em 5em;
+}
+}
