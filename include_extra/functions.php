@@ -121,7 +121,7 @@ function getSeccionPorCategoriaMenu(){
 			echo "	
 				<figure>
 					<span class='stock' title='En stock'><img src='/img/style/$producto_stock'/></span>
-					<img src='/img/$producto_imagen_thumb' />
+					<img src='/img-productos/$producto_imagen_thumb' />
 					<figcaption>
 						<h1>$producto_titulo</h1>
 						<div>
@@ -162,7 +162,7 @@ function showDetalleProducto(){
 				</div>
 				<div class='descripcion'>
 					<div>
-						<img src='/img/$producto_imagen'/>
+						<img src='/img-productos/$producto_imagen'/>
 						<p title='Una vez que elegís tu producto apretás el botón Agregar al carrito y una vez que tenés el monto total a pagar clickeás en el botón 'Comprar' para redirigirte a la página de pagos PAYU.'><a href=''>¿Cómo comprar por la página?</a></p>
 						<p title='Es una plataforma de pagos tipo MercadoPago o PayPal, en la cual ingresás tus datos y elegís el método de pago que más te beneficie.'><a href=''>¿Qué es PAYU?</a></p>
 						<p title='Todos los productos tienen su propia garantía de fábrica además de tener los 3 meses de cambio en nuestro local.'><a href=''>¿Qué garantía tiene los productos que compro?</a></p>

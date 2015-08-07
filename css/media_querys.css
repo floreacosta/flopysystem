@@ -7,6 +7,23 @@ section.ubicacion>div>div>address, section.ubicacion>div>div>aside {
     margin-bottom: 4%;
 }
 }
+@media screen and (max-width: 1208px){
+section.reparaciones>div>span>div {
+    margin: 1.5em 0em;
+    text-align: center;
+    display: inline-block;
+}
+
+section.reparaciones>div>span>div>aside {
+    margin-right: 0em;
+	display: block;
+}
+
+section.reparaciones>div>span>div>a {
+    margin: 0.5em 0em;
+    display: inline-block;
+}
+}
 
 @media screen and (max-width: 1080px){
 
@@ -73,22 +90,6 @@ section.reparaciones>div>span>h1 {
 
 section.reparaciones>div>span>p {
     font-size: 1em;
-}
-
-section.reparaciones>div>span>div {
-    margin: 1.5em 0em;
-    text-align: center;
-    display: inline-block;
-}
-
-section.reparaciones>div>span>div>aside {
-    margin-right: 0em;
-	display: block;
-}
-
-section.reparaciones>div>span>div>a {
-    margin: 0.5em 0em;
-    display: inline-block;
 }
 /*Fin reparaciones*/
 

@@ -128,16 +128,20 @@ section.recomendacion>div>figure {
 
 }
 
-@media screen and (min-width: 1060px){
+@media screen and (min-width: 1080px){
 header>div.group{
-	display:block;
+	display: block;
+}
+}
+
+@media screen and (min-width: 1079px){
+header>div.boton-desplegable{
+	display: none;
+}/*MENU MOBILE*/
 }
 
 
-header>div.boton-desplegable{
-	display:none;
-}/*MENU MOBILE*/
-
+@media screen and (min-width: 1060px){
 /* header */
 header{
 	z-index: 2;

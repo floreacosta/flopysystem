@@ -235,7 +235,7 @@ nav.menu.redes>ul>a>li{
 	height: 1.7em;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0.8em 0em;
+	padding: 0.65em 0em;
 	border-bottom: solid 1.5px #BBBDBF;
 }
 
@@ -491,6 +491,14 @@ section.productos>h1 {
     font-size: 1.8em;
     padding-right: 0.5em;
 }
+
+/*Carrito en todos lados*/
+section.all {
+    width: 18em;
+    position: absolute;
+    right: 0;
+}
+/*Fin Carrito en todos lados*/
 
 }
 @media screen and (min-width: 1200px){

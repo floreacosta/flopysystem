@@ -11,6 +11,7 @@ include_once("/include_extra/functions.php");
 
 <?php
 include_once("/include_extra/header.php");
+include_once("/include_extra/carrito.php");
 showDetalleProducto();
 ?>
 

@@ -56,6 +56,10 @@ section.reparaciones>div>span>div>a {
     padding: 0.5em 1em;
     border-radius: 2em;
     letter-spacing: 0.25em;
+	
+    box-shadow: -3px 4px 1px #DDDDDD;
+    -webkit-box-shadow: -3px 4px 1px #DDDDDD;
+    -moz-box-shadow: -3px 4px 1px #DDDDDD;
 }
 
 section.reparaciones>div>span>div {

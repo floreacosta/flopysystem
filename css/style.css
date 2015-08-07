@@ -363,3 +363,52 @@ section.thanks>a>h2 {
     max-width: 18em;
     margin: 2em auto;
 }
+
+/*Carrito en todos lados*/
+section.all {
+    box-shadow: -3px 4px 2px #EFEFEF;
+    -webkit-box-shadow: -3px 4px 2px #EFEFEF;
+    -moz-box-shadow: -3px 4px 2px #EFEFEF;
+}
+
+section.all>div.carro {
+    max-width: 18em;
+    margin: 0 auto;
+}
+
+section.all>div.carro>div {
+    display: inline-block;
+    width: 17em;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 0.5em;
+}
+
+section.all>div.carro>div>a {
+    background: url("/img/style/carrito-compras.png") no-repeat center;
+    height: 2em;
+    width: 2em;
+    display: inline-block;
+    margin-left: 0.5em;
+}
+
+section.all>div.carro>div>span {
+    display: inline-block;
+    float: left;
+}
+
+section.all>div.carro>div>span>p {
+    text-transform: none;
+    padding: 0.5em;
+    color: #4D4D4D;
+    letter-spacing: 0.05em;
+    display: inline-block;
+}
+
+section.all>div.carro>div>span>a {
+    float: left;
+    display: inline-block;
+    margin-right: 0.3em;
+    padding: 0.5em;
+}
+/*Fin carrito en todos lados*/
