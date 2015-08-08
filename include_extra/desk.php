@@ -14,7 +14,7 @@ include_once("/functions.php");
 		</nav>
 		
 		<nav class="menu"><a href="/reparaciones.php">Reparaciones</a></nav><!-- Reparaciones -->
-		<form name="busqueda" action="/search.php" method="GET"><!-- Buscar -->
+		<form name="busqueda" action="/search.php" method="post"><!-- Buscar -->
 			<input type="search" name="consulta" placeholder="Buscar">
 			<button type="submit" name="buscar" value="" title="Buscar"></button>
 		</form>

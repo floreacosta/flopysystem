@@ -16,8 +16,6 @@ include_once("/include_extra/carrito.php");
 ?>
 
 <section class="productos">
-	<h1>Título de la sección</h1><a href="#">| back</a>
-	<div>
 	<?php 
 		getSeccionPorCategoriaMenu();
 	?>

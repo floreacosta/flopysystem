@@ -110,6 +110,11 @@ function getSeccionPorCategoriaMenu(){
 		$get_categoria = "SELECT * FROM products where $tipo_categoria = '$show_categoria'";
 		$run_categoria = mysqli_query($db, $get_categoria);
 		
+		echo"
+		<h1>$tituloSeccion</h1><a href='#'>| back</a>
+			<div>
+		";
+		
 		while ($producto=mysqli_fetch_array($run_categoria)){
 			
 			$producto_id = $producto['id_products'];
@@ -126,7 +131,7 @@ function getSeccionPorCategoriaMenu(){
 						<h1>$producto_titulo</h1>
 						<div>
 							<p>Precio web: $$producto_precio</p>
-							<a href='/details.php?id=$producto_id'>+</a>
+							<a href='/details.php?id=$producto_id&nombreSec=$tituloSeccion'>+</a>
 						</div>
 					</figcaption>
 				</figure>				
@@ -145,6 +150,8 @@ function showDetalleProducto(){
 	$get_producto = "SELECT * FROM products where id_products = '$id_producto'";
 	$run_producto = mysqli_query($db, $get_producto);
 	
+	$tituloSeccion = $_GET['nombreSec'];
+	
 	while ($producto=mysqli_fetch_array($run_producto)){
 			
 		$producto_titulo = ucfirst($producto['product_title']);	
@@ -157,7 +164,7 @@ function showDetalleProducto(){
 			<section class='details'>
 				<div>
 					<h1>$producto_titulo</h1>
-					<p>| Sección</p>
+					<p>| $tituloSeccion</p>
 					<p class='back'>| back</p>
 				</div>
 				<div class='descripcion'>
@@ -193,4 +200,69 @@ function showDetalleProducto(){
 	}
 }
 
+function busqueda(){
+
+	$db = callDb();
+	
+	if(isset($_POST['buscar'])){	
+		$consulta=$_POST['consulta'];
+		
+		$get_producto = "SELECT * FROM products WHERE product_title LIKE '%$consulta%'";
+		$run_producto = mysqli_query($db, $get_producto);
+	
+		echo"
+		<h1>Resultados para: $consulta</h1><a href='#'>| back</a>
+			<div>
+		";
+		
+		while ($producto=mysqli_fetch_array($run_producto)){
+			
+			$producto_id = $producto['id_products'];
+			$producto_titulo = ucfirst($producto['product_title']);
+			$producto_imagen_thumb = $producto['product_thumbs'];
+			$producto_precio = $producto['product_price'];
+			$producto_stock = $producto['product_stock'];			
+			
+			echo "	
+				<figure>
+					<span class='stock' title='En stock'><img src='/img/style/$producto_stock'/></span>
+					<img src='/img-productos/$producto_imagen_thumb' />
+					<figcaption>
+						<h1>$producto_titulo</h1>
+						<div>
+							<p>Precio web: $$producto_precio</p>
+							<a href='/details.php?id=$producto_id&nombreSec='>+</a>
+						</div>
+					</figcaption>
+				</figure>				
+			";
+		}
+	}
+}
+
+function novedades(){
+	$db = callDb();
+	$get_producto = "select * from products order by id_products desc limit 4";
+	$run_producto = mysqli_query($db, $get_producto);
+
+	while ($producto=mysqli_fetch_array($run_producto)){
+		
+		$producto_id = $producto['id_products'];
+		$producto_titulo = ucfirst($producto['product_title']);
+		$producto_imagen_thumb = $producto['product_thumbs'];
+		$producto_precio = $producto['product_price'];
+		$producto_stock = $producto['product_stock'];
+		$producto_detalles = $producto['product_details'];		
+		
+		echo "
+			<figure>
+				<img src='img-productos/$producto_imagen_thumb'/>
+				<figcaption>
+					<a href='/details.php?id=$producto_id&nombreSec='><h2>$producto_titulo</h2></a>
+					<p>$producto_detalles</p>
+				</figcaption>
+			</figure>		
+		";
+	}
+}
 ?>

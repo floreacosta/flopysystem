@@ -33,34 +33,9 @@ include_once("/include_extra/header.php");
 <section class="recomendacion">
 	<h1>Recomendaciones de la semana</h1>
 	<div>
-		<figure><!-- Recomendacion 1 -->
-			<img src="img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
-			<figcaption>
-				<a href="#"><h2>Micrófono de pie FOG-800</h2></a>
-				<p>Micrófono de pie multimedia con cuerpo flexible y cómoda base para escritorio. Utilizable para video-conferencias y dictador por voz.</p>
-			</figcaption>
-		</figure>
-		<figure><!-- Recomendacion 2 -->
-			<img src="img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
-			<figcaption>
-				<a href="#"><h2>Micrófono de pie FOG-800</h2></a>
-				<p>Micrófono de pie multimedia con cuerpo flexible y cómoda base para escritorio. Utilizable para video-conferencias y dictador por voz.</p>
-			</figcaption>
-		</figure>
-		<figure><!-- Recomendacion 3 -->
-			<img src="img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
-			<figcaption>
-				<a href="#"><h2>Micrófono de pie FOG-800</h2></a>
-				<p>Micrófono de pie multimedia con cuerpo flexible y cómoda base para escritorio. Utilizable para video-conferencias y dictador por voz.</p>
-			</figcaption>
-		</figure>
-		<figure><!-- Recomendacion 4 -->
-			<img src="img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
-			<figcaption>
-				<a href="#"><h2>Micrófono de pie FOG-800</h2></a>
-				<p>Micrófono de pie multimedia con cuerpo flexible y cómoda base para escritorio. Utilizable para video-conferencias y dictador por voz.</p>
-			</figcaption>
-		</figure>
+	<?php
+		novedades();
+	?>
 	</div>
 	<div class="clear"></div>
 </section>
