@@ -216,7 +216,7 @@ function busqueda(){
 		";
 		
 		while ($producto=mysqli_fetch_array($run_producto)){
-			
+		
 			$producto_id = $producto['id_products'];
 			$producto_titulo = ucfirst($producto['product_title']);
 			$producto_imagen_thumb = $producto['product_thumbs'];
@@ -236,6 +236,12 @@ function busqueda(){
 					</figcaption>
 				</figure>				
 			";
+		}	
+		
+		if(empty($producto)){
+			echo"
+				<h1>NO SE ENCONTRARON RESULTADOS PARA SU BUSQUEDA</h1>
+			";
 		}
 	}
 }
@@ -246,7 +252,7 @@ function novedades(){
 	$run_producto = mysqli_query($db, $get_producto);
 
 	while ($producto=mysqli_fetch_array($run_producto)){
-		
+
 		$producto_id = $producto['id_products'];
 		$producto_titulo = ucfirst($producto['product_title']);
 		$producto_imagen_thumb = $producto['product_thumbs'];
