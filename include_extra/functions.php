@@ -211,7 +211,7 @@ function busqueda(){
 		$run_producto = mysqli_query($db, $get_producto);
 	
 		echo"
-		<h1>Resultados para: $consulta</h1><a href='#'>| back</a>
+		<h1>Resultados para: '$consulta'</h1><a href='#'>| back</a>
 			<div>
 		";
 		
@@ -259,15 +259,19 @@ function novedades(){
 		$producto_precio = $producto['product_price'];
 		$producto_stock = $producto['product_stock'];
 		$producto_detalles = $producto['product_details'];		
+		$producto_novedad = $producto['product_novedad'];		
 		
 		echo "
 			<figure>
 				<img src='img-productos/$producto_imagen_thumb'/>
 				<figcaption>
-					<a href='/details.php?id=$producto_id&nombreSec='><h2>$producto_titulo</h2></a>
-					<p>$producto_detalles</p>
+					<a href='/details.php?id=$producto_id&nombreSec='>
+						<h2>$producto_titulo</h2>
+						<h7>$producto_novedad</h7>
+					</a>
 				</figcaption>
-			</figure>		
+				<hr>
+			</figure>
 		";
 	}
 }

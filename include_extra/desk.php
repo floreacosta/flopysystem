@@ -21,9 +21,9 @@ include_once("/functions.php");
 		
 		<nav class="menu redes"><a href="#">Contacto</a><!-- Redes -->
 			<ul>
-				<a href="#"><li class="fb"></li></a>
-				<a href="#"><li class="it"></li></a>
-				<a href="#"><li class="ml"></li></a>
+				<a href="https://www.facebook.com/flopysystem"><li class="fb"></li></a>
+				<a href="#location"><li class="it"></li></a>
+				<a href="http://eshops.mercadolibre.com.ar/FLOPYSYSTEM1"><li class="ml"></li></a>
 			</ul>
 		</nav>
 	</div>

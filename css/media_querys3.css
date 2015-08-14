@@ -1,9 +1,16 @@
 /*Inicio de querys INDEX*/
-@media screen and (min-width: 480px){
+
+@media screen and (min-width: 400px){
 section.recomendacion>div>figure {
-    max-width: 40%;
+    max-width: 46%;
     float: left;
-    margin: 1em;
+    margin: 0em 2%;
+}
+}
+
+@media screen and (min-width: 480px){
+section.recomendacion>div>figure>figcaption>a>h2 {
+    text-align: left;
 }
 }
 
@@ -13,9 +20,14 @@ main {
 }
 
 section.recomendacion>div>figure {
-    max-width: 40%;
-    float: left;
-    margin: 1em;
+    max-width: 42%;
+    margin: 0em 4%;
+}
+
+section.recomendacion>div {
+    display: block;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 div.responsive {
@@ -67,8 +79,23 @@ section.ubicacion>a>h1, section.recomendacion>h1 {
     font-size: 2em;
 }
 
+section.recomendacion>div {
+    max-width: 100%;
+    margin-bottom: 2em;
+}
+
 section.recomendacion>div>figure {
-    max-width: 20%;
+    max-width: 21%;
+    margin: 0em 2%;
+}
+
+section.recomendacion>div>figure>figcaption>a>h2 {
+    text-align: left;
+    font-size: 1.25em;
+}
+
+section.recomendacion>div>figure>hr{
+display: none;
 }
 
 section.ubicacion>div>iframe {
@@ -121,11 +148,6 @@ main>div>a>h1 {
 section.recomendacion, section.ubicacion {
     padding: 2em 5em;
 }
-
-section.recomendacion>div>figure {
-    max-width: 21.1%;
-}
-
 }
 
 @media screen and (min-width: 1080px){
@@ -330,10 +352,6 @@ main>div {
     bottom: 3em;
     max-width: 30%;
     padding: 2em 4em;
-}
-
-section.recomendacion>div>figure {
-    max-width: 21.8%;
 }
 }
 

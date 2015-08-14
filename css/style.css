@@ -254,6 +254,8 @@ section.recomendacion, section.ubicacion {
 section.recomendacion>h1 {
     padding: 1.1em 0em;
     border-top: solid 1px;
+    font-size: 1.8em;
+    letter-spacing: 2px;
 }
 
 section.recomendacion>div {
@@ -268,10 +270,28 @@ section.recomendacion>div>figure {
 
 section.recomendacion>div>figure>figcaption {
     margin-top: 1em;
+    min-height: 3em;
+}
+
+section.recomendacion>div>figure>figcaption>a>h2 {
+    letter-spacing: 1;
+    font-size: 1.3em;
+    line-height: 0.95em;
+    margin-bottom: 0.5em;
+}
+
+section.recomendacion>div>figure>figcaption>a>h7 {
+    text-transform: none;
+}
+
+section.recomendacion>div>figure>hr {
+    margin: 2em auto;
 }
 
 section.recomendacion>div>figure>img {
-    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 section.recomendacion>div>figure>figcaption>p {
@@ -285,6 +305,8 @@ section.ubicacion {
 section.ubicacion>a>h1 {
     color: #fff;
     padding-bottom: 1em;
+    font-size: 1.8em;
+    letter-spacing: 2px;
 }
 
 section.ubicacion>div>iframe {
@@ -307,16 +329,6 @@ section.ubicacion>div>div>address {
 }
 
 /* fin main */
-
-/* div main */
-
-/* fin div main */
-
-/* section----->recomendaciones */
-/* fin section----->recomendaciones */
-
-/* section----->ubicacion */
-/* fin section----->ubicacion */
 
 /* footer */
 footer {
