@@ -394,6 +394,8 @@ section.all>div.carro>div {
     margin: 0 auto;
     background-color: #fff;
     padding: 0.5em;
+	z-index: 2000;
+	position: relative;
 }
 
 section.all>div.carro>div>a {
