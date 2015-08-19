@@ -425,4 +425,12 @@ section.all>div.carro>div>span>a {
     margin-right: 0.3em;
     padding: 0.5em;
 }
+
+section.all>div.carro>div>span>span {
+    float: left;
+    display: inline-block;
+    margin-right: 0.3em;
+    padding: 0.5em;
+	cursor: pointer;
+}
 /*Fin carrito en todos lados*/

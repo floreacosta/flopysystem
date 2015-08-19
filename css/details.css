@@ -90,3 +90,15 @@ section.details>div>span>div.precio>form>input[type="submit"] {
     padding: 0.5em 1em;
     border-radius: 2em;
 }
+
+span.addButton{
+    background-color: #E54016;
+    border: 0;
+    color: #fff;
+    width: 150px;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+	font-size: 1em !important;
+	color: #fff !important;
+	cursor: pointer;
+}

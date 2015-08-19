@@ -189,9 +189,7 @@ function showDetalleProducto(){
 						
 						<div class='precio'>
 							<span class='precio'>Precio web: $$producto_precio</span>
-							<form>
-								<input type='submit' name='buy' value='Agregar al carrito'>
-							</form>
+							<span class='addButton' onclick='addToCart($id_producto)'>Agregar al carrito</span>
 						</div>
 					</span>
 				</div>
@@ -209,14 +207,15 @@ function busqueda(){
 		
 		$get_producto = "SELECT * FROM products WHERE product_title LIKE '%$consulta%'";
 		$run_producto = mysqli_query($db, $get_producto);
-	
+		$encontro = false;
+		
 		echo"
 		<h1>Resultados para: '$consulta'</h1><a href='#'>| back</a>
 			<div>
 		";
 		
 		while ($producto=mysqli_fetch_array($run_producto)){
-		
+			$encontro = true;
 			$producto_id = $producto['id_products'];
 			$producto_titulo = ucfirst($producto['product_title']);
 			$producto_imagen_thumb = $producto['product_thumbs'];
@@ -238,7 +237,7 @@ function busqueda(){
 			";
 		}	
 		
-		if(empty($producto)){
+		if(!$encontro){
 			echo"
 				<h1>NO SE ENCONTRARON RESULTADOS PARA SU BUSQUEDA</h1>
 			";
@@ -275,4 +274,23 @@ function novedades(){
 		";
 	}
 }
+
+function agregarAlCarrito(){
+	if(isset($_POST['addCart'])){
+		
+		$idUnique = intval($_POST['id']);
+		$prod_title = $_POST['title'];
+		$prod_precio = intval($_POST['precio']);
+		$carrito = new Carrito();
+		$articulo = array(
+			"id"			=>		$idUnique,
+			"cantidad"		=>		1,
+			"precio"		=>		$prod_precio,
+			"nombre"		=>		$prod_title,
+			"uniqueId"      =>      $idUnique
+		);
+		$carrito->add($articulo);		
+	}
+}
+
 ?>
