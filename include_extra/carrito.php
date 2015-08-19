@@ -3,10 +3,15 @@
 <section class="all">
 	<div class="carro" id='carro'>
 		<div>
+			<span>
+				<span class='quitar' onclick='showHideCart()'>v</span> 
+				<p>Carrito de compras</p>
+			</span>
 			<?php 
 				$carrito = new Carrito();			
 				$carro = $carrito->get_content();
 				if(!empty($carro)){
+					echo"<div id='itemsCarro'>";
 					foreach($carro as $producto)
 					{
 						$nombre_producto = ucfirst($producto["nombre"]);
@@ -21,10 +26,10 @@
 						</span>
 						";
 					}
+					echo"</div>";
 				}else{
 					echo"
 						<span>
-							<a class='quitar' title='Eliminar del carrito' href='#'>x</a> 
 							<p>No hay productos en el carrito.</p>
 						</span>
 					";

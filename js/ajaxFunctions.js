@@ -43,3 +43,15 @@ function deleteItem(str) {
         xmlhttp.send();
     }
 }
+
+function showHideCart(){
+	
+	
+	if($('#itemsCarro').is(":visible")){
+		$('#itemsCarro').hide();
+	}else{
+		$('#itemsCarro').show();
+	}
+	 
+	
+}

@@ -46,11 +46,16 @@ function addProductCart(){
 		
 		echo"
 		<div>
+			<span>
+				<span class='quitar' onclick='showHideCart()'>v</span> 
+				<p>Carrito de compras</p>
+			</span>
 		";
 			
 		$carrito = new Carrito();			
 		$carro = $carrito->get_content();
 		if(!empty($carro)){
+			echo"<div id='itemsCarro' style='display:block'>";
 			foreach($carro as $producto)
 			{
 				$nombre_producto = ucfirst($producto['nombre']);
@@ -65,10 +70,10 @@ function addProductCart(){
 				</span>
 				";
 			}
+			echo"</div>";
 		}else{
 			echo"
 				<span>
-					<span class='quitar' onclick='deleteItem()'>x</span> 
 					<p>No hay productos en el carrito.</p>
 				</span>
 			";
@@ -94,11 +99,16 @@ function deleteCartItem(){
 				
 		echo"
 		<div>
+			<span>
+				<span class='quitar' onclick='showHideCart()'>v</span> 
+				<p>Carrito de compras</p>
+			</span>		
 		";
 			
 		$carrito = new Carrito();			
 		$carro = $carrito->get_content();
 		if(!empty($carro)){
+			echo"<div id='itemsCarro'>";
 			foreach($carro as $producto)
 			{
 				$nombre_producto = ucfirst($producto['nombre']);
@@ -113,10 +123,10 @@ function deleteCartItem(){
 				</span>
 				";
 			}
+			echo"</div>";
 		}else{
 			echo"
 				<span>
-					<span class='quitar' onclick='deleteItem()'>x</span> 
 					<p>No hay productos en el carrito.</p>
 				</span>
 			";

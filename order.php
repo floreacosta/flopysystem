@@ -5,6 +5,8 @@ include("/include_extra/head.php");
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/css/buy.css"/>
     <link rel="stylesheet" type="text/css" href="/css/media_querys2.css"/>
+	<script src="/js/ajaxFunctions.js"></script> 
+	<script src="/js/jquery1.11.3.js"></script> 	
 </head>
 
 <body>
