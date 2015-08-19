@@ -5,9 +5,8 @@
 		<div>
 			<span>
 				<span class='quitar' onclick='showHideCart()'>/</span> 
-				<p>Carrito de compras</p>
+				<p>Carrito de compras</p><p class="carrito">.</p>
 			</span>
-			<a title="A Carrito de compras" href="/order.php"><input type="submit" value="Pagar"/></a>
 			<?php 
 				$carrito = new Carrito();			
 				$carro = $carrito->get_content();
@@ -36,8 +35,9 @@
 					";
 				}
 				
-
+			echo"<a title='A Carrito de compras' href='/order.php'><input type='submit' value='Pagar'/></a>";
 			?>
+
 		</div>
 	</div>
 </section>

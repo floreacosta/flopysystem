@@ -394,6 +394,9 @@ section.all {
     box-shadow: -3px 4px 2px #EFEFEF;
     -webkit-box-shadow: -3px 4px 2px #EFEFEF;
     -moz-box-shadow: -3px 4px 2px #EFEFEF;
+    background-color: #fff;
+    z-index: 2000;
+    position: relative;
 }
 
 section.all>div.carro {
@@ -407,8 +410,6 @@ section.all>div.carro>div {
     margin: 0 auto;
     background-color: #fff;
     padding: 0.5em;
-    z-index: 2000;
-    position: relative;
 }
 
 section.all>div.carro>div>a>input[value="Pagar"] {
@@ -451,6 +452,16 @@ section.all>div.carro>div>div>span>p {
     color: #4D4D4D;
     letter-spacing: 0.05em;
     display: inline-block;
+}
+
+section.all>div.carro>div>span>p.carrito {
+    font-family: modern_pictogramsnormal;
+    font-size: 2.5em;
+    padding: 0;
+    position: absolute;
+    color: #A7A9AB;
+    margin-left: 0.3em;
+    margin-top: -0.3em;
 }
 
 section.all>div.carro>div>span>a {

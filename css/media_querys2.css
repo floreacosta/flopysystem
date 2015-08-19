@@ -140,7 +140,7 @@ header>div.boton-desplegable{
 
 /* header */
 header{
-	z-index: 2;
+	z-index: 3000;
 	position: relative;
 	height: 5.7em;
 	width: 100%;
