@@ -26,6 +26,7 @@
 						</span>
 						";
 					}
+					echo"<span class='pay'>Pagar</span>";
 					echo"</div>";
 				}else{
 					echo"
@@ -34,8 +35,6 @@
 						</span>
 					";
 				}
-				
-			echo"<a title='A Carrito de compras' href='/order.php'><input type='submit' value='Pagar'/></a>";
 			?>
 
 		</div>

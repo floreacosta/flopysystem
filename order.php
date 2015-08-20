@@ -51,7 +51,7 @@ include("/include_extra/header.php");
 				<input type="email" name="correo" placeholder="Mail*">
 			</form>
 			<form class="pagar">
-				<input type="submit" name="buy-now" value="Pagar">
+				
 			</form>
 		</div>
 		

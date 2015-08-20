@@ -47,8 +47,8 @@ function addProductCart(){
 		echo"
 		<div>
 			<span>
-				<span class='quitar' onclick='showHideCart()'>v</span> 
-				<p>Carrito de compras</p>
+				<span class='quitar' onclick='showHideCart()'>/</span> 
+				<p>Carrito de compras</p><p class='carrito'>.</p>
 			</span>
 		";
 			
@@ -70,6 +70,7 @@ function addProductCart(){
 				</span>
 				";
 			}
+			echo"<span class='pay'>Pagar</span>";
 			echo"</div>";
 		}else{
 			echo"
@@ -101,14 +102,14 @@ function deleteCartItem(){
 		<div>
 			<span>
 				<span class='quitar' onclick='showHideCart()'>v</span> 
-				<p>Carrito de compras</p>
+				<p>Carrito de compras</p><p class='carrito'>.</p>
 			</span>		
 		";
 			
 		$carrito = new Carrito();			
 		$carro = $carrito->get_content();
 		if(!empty($carro)){
-			echo"<div id='itemsCarro'>";
+			echo"<div id='itemsCarro' style='display:block'>";
 			foreach($carro as $producto)
 			{
 				$nombre_producto = ucfirst($producto['nombre']);
@@ -123,6 +124,7 @@ function deleteCartItem(){
 				</span>
 				";
 			}
+			echo"<span class='pay'>Pagar</span>";
 			echo"</div>";
 		}else{
 			echo"

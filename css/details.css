@@ -102,3 +102,17 @@ span.addButton{
 	color: #fff !important;
 	cursor: pointer;
 }
+
+span.pay{
+	clear:both;
+	background-color: #E54016;
+    border: 0;
+    color: #fff;
+    width: auto;
+    padding: 0.2em 1em;
+    border-radius: 2em;
+	font-size: 1em !important;
+	color: #fff !important;
+	cursor: pointer;
+	margin-top: 10px;
+}
