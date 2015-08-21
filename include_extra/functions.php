@@ -189,7 +189,14 @@ function showDetalleProducto(){
 						
 						<div class='precio'>
 							<span class='precio'>Precio web: $$producto_precio</span>
-							<span class='addButton' onclick='addToCart($id_producto)'>Agregar al carrito</span>
+						";
+						
+						if($producto_stock == 'yes.png'){
+							echo"<span class='addButton' onclick=addToCart($id_producto)>Agregar al carrito</span>";
+						}else{
+							echo'<span class="addButton" onclick=alert("Actualmente&nbsp;no&nbsp;hay&nbsp;stock&nbsp;del&nbsp;producto&nbsp;seleccionado")>Agregar al carrito</span>';	
+						}							
+						echo"
 						</div>
 					</span>
 				</div>

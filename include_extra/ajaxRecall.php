@@ -15,6 +15,9 @@ if(isset($_GET['func'])&&!empty($_GET['func'])){
 	case 2:
         deleteCartItem();
 	break;
+	case 3:
+        changeCantProd();
+	break;
 	}
 }
 
@@ -23,7 +26,6 @@ function addProductCart(){
 	if(isset($_GET['q'])&&!empty($_GET['q'])){
 		$db = callDb();
 		$prod_id = $_GET['q'];
-		$id_unique = md5($_GET['q']);
 		
 		$get_producto = "Select * FROM products where id_products = '$prod_id'";
 		$run_producto = mysqli_query($db, $get_producto);
@@ -143,6 +145,86 @@ function deleteCartItem(){
 			
 	}
 	
+}
+
+function changeCantProd(){
+	if(isset($_GET['q'])&&!empty($_GET['q'])){
+		$prod_id = $_GET['q'];
+		$prod_cant = intval($_GET['nuevaCant']);
+			
+		$carrito = new Carrito();
+		
+		$articulo = array(
+			"id"			=>		$prod_id,
+			"cantidad"		=>		$prod_cant,
+			"precio"		=>		null,
+			"nombre"		=>		null,
+			"uniqueId"      =>      $prod_id,
+			"imageThumb"    =>      null
+		);
+		
+		$carrito->changeItemCant($articulo);
+		
+		echo"
+		<h1>Mi próxima compra:</h1>
+			<section class='unidades'>
+		";
+		
+		$carrito = new Carrito();			
+		$carro = $carrito->get_content();
+		if(!empty($carro)){
+			foreach($carro as $producto){
+				$nombre_producto = ucfirst($producto["nombre"]);
+				$precio_producto = $producto["precio"];
+				$cantidad_producto = $producto["cantidad"];
+				$id_producto_enc = $producto["id"];
+				$prod_thumb = $producto["imageThumb"];
+				$prod_cant = $producto["cantidad"];
+				$subt = intval($precio_producto) * $prod_cant;
+				
+				echo"
+					<figure>
+						<img src='/img-productos/$prod_thumb'/>
+						<figcaption>
+							<input type='submit' name='stop' value='X'>
+							<div>
+								<h2>$nombre_producto</h2>
+								<h3>Precio web: $$precio_producto x <input onchange='changeItemsCant($id_producto_enc, this.value)' value='$prod_cant' type='number' name='units' min='1' max='1000'> u.</h3>
+								<h4>Subtotal: $$subt</h4>
+							</div>
+						</figcaption>
+					</figure>
+				";					
+			}
+		}
+		
+		echo"
+		</section>
+	
+		<section class='total'>
+			<div class='carro'>
+				<h1>Total: $
+		";
+ 
+		$carrito = new Carrito();
+		echo $carrito->precio_total();
+			
+		echo"	
+			</h1>
+			<form class='datos'>
+				<input type='text' name='id' placeholder='Nombre y Apellido*'>
+				<input type='email' name='correo' placeholder='Mail*'>
+			</form>
+			<form class='pagar'>
+				
+			</form>
+		</div>
+		
+			<p>Al hacer click en Pagar se redireccionará a la plataforma de pagos PAYU* quien realizará el cobro del monto que figure como total SIN incluir el costo de envío, que deberá tramitarse por mail (ventas@flopysystem.com.ar) o tel. (011-4639-3713).</p>
+			<p class='what' title='Es una plataforma de pagos tipo MercadoPago o PayPal, en la cual ingresás tus datos y elegís el método de pago que más te beneficie.'><a href=''>*¿Qué es PAYU?</a></p>
+		</section>
+		";
+	}
 }
 
 ?>

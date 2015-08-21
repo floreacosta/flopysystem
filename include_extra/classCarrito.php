@@ -76,7 +76,7 @@ class Carrito
  
 	}
 	
-	public function addItem($articulo = array())
+	public function changeItemCant($articulo = array())
 	{
 		//primero comprobamos el articulo a añadir, si está vacío o no es un 
 		//array lanzamos una excepción y cortamos la ejecución
@@ -91,23 +91,7 @@ class Carrito
  
 		//creamos la id única para el producto
 		$articulo["unique_id"] = $unique_id;
-		
-		//si no está vacío el carrito lo recorremos 
-		if(!empty($this->carrito))
-		{
-			foreach ($this->carrito as $row) 
-			{
-				//comprobamos si este producto ya estaba en el 
-				//carrito para actualizar el producto o insertar
-				//un nuevo producto	
-				if($row["unique_id"] === $unique_id)
-				{
-					//si ya estaba sumamos la cantidad
-					$articulo["cantidad"] = $row["cantidad"] + $articulo["cantidad"];
-				}
-			}
-		}
- 
+		 
 		//evitamos que nos pongan números negativos y que sólo sean números para cantidad y precio
 		$articulo["cantidad"] = trim(preg_replace('/([^0-9\.])/i', '', $articulo["cantidad"]));
  

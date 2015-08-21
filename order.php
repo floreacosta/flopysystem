@@ -16,9 +16,9 @@ include_once("/include_extra/classCarrito.php");
 include("/include_extra/header.php");
 ?>
 
-<section class="details-buy">
+<section class="details-buy" id='details-buy'>
 	<h1>Mi próxima compra:</h1>
-	<section class="unidades">
+	<section class="unidades" id='unidades'>
 		<?php 
 			$carrito = new Carrito();			
 			$carro = $carrito->get_content();
@@ -39,7 +39,7 @@ include("/include_extra/header.php");
 								<input type='submit' name='stop' value='X'>
 								<div>
 									<h2>$nombre_producto</h2>
-									<h3>Precio web: $$precio_producto x <input value='$prod_cant' type='number' name='units' min='1' max='1000'> u.</h3>
+									<h3>Precio web: $$precio_producto x <input onchange='changeItemsCant($id_producto_enc, this.value)' value='$prod_cant' type='number' name='units' min='1' max='1000'> u.</h3>
 									<h4>Subtotal: $$subt</h4>
 								</div>
 							</figcaption>
