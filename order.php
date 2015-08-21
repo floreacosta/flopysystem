@@ -1,5 +1,6 @@
 <?php
-include("/include_extra/head.php");
+include_once("/include_extra/head.php");
+include_once("/include_extra/classCarrito.php");
 ?>
 
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
@@ -18,34 +19,47 @@ include("/include_extra/header.php");
 <section class="details-buy">
 	<h1>Mi próxima compra:</h1>
 	<section class="unidades">
-			<figure>
-				<img src="/img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
-				<figcaption>
-					<input type="submit" name="stop" value="X">
-					<div>
-						<h2>Auricular Dual Mode Luxy Leatherette IHL-500BK</h2>
-						<h3>Precio web: $150 x <input type="number" name="units" min="1" max="1000"> u.</h3>
-						<h4>Subtotal: $300</h4>
-					</div>
-				</figcaption>
-			</figure>
+		<?php 
+			$carrito = new Carrito();			
+			$carro = $carrito->get_content();
+			if(!empty($carro)){
+				foreach($carro as $producto){
+					$nombre_producto = ucfirst($producto["nombre"]);
+					$precio_producto = $producto["precio"];
+					$cantidad_producto = $producto["cantidad"];
+					$id_producto_enc = $producto["id"];
+					$prod_thumb = $producto["imageThumb"];
+					$prod_cant = $producto["cantidad"];
+					$subt = intval($precio_producto) * $prod_cant;
+					
+					echo"
+						<figure>
+							<img src='/img-productos/$prod_thumb'/>
+							<figcaption>
+								<input type='submit' name='stop' value='X'>
+								<div>
+									<h2>$nombre_producto</h2>
+									<h3>Precio web: $$precio_producto x <input value='$prod_cant' type='number' name='units' min='1' max='1000'> u.</h3>
+									<h4>Subtotal: $$subt</h4>
+								</div>
+							</figcaption>
+						</figure>
+					";					
+				}
+			}
+		?>
+			
 
-			<figure>
-				<img src="/img/1.4V-HDMI-a-Mini-HDMI-515-thumbs.jpg"/>
-				<figcaption>
-					<input type="submit" name="stop" value="X">
-					<div>
-						<h2>Auricular c/ micrófono T-500-1 A4-Tech</h2>
-						<h3>Precio web: $150 x <input type="number" name="units" min="1" max="1000"> u.</h3>
-						<h4>Subtotal: $300</h4>
-					</div>
-				</figcaption>
-			</figure>
 	</section>
 	
 	<section class="total">
 		<div class="carro">
-			<h1>Total: $500</h1>
+			<h1>Total: $
+			<?php 
+			$carrito = new Carrito();
+			echo $carrito->precio_total();
+			?>
+			</h1>
 			<form class="datos">
 				<input type="text" name="id" placeholder="Nombre y Apellido*">
 				<input type="email" name="correo" placeholder="Mail*">
@@ -63,7 +77,7 @@ include("/include_extra/header.php");
 
 <div class="details">
 	<?php
-	include("/include_extra/footer.php");
+	include_once("/include_extra/footer.php");
 	?>
 </div>
 

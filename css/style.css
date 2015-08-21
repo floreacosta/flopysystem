@@ -509,4 +509,8 @@ span.pay{
 	cursor: pointer;
 	margin-top: 10px;
 }
+
+a.pay{
+	color: #fff !important;
+}
 /*Fin carrito en todos lados*/

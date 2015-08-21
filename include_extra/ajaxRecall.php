@@ -30,6 +30,7 @@ function addProductCart(){
 		while($row_producto=mysqli_fetch_array($run_producto)){
 			$product_title = $row_producto['product_title'];
 			$product_price = $row_producto['product_price'];
+			$product_thumb = $row_producto['product_thumbs'];
 			
 			$carrito = new Carrito();
 			
@@ -38,7 +39,8 @@ function addProductCart(){
 				"cantidad"		=>		1,
 				"precio"		=>		$product_price,
 				"nombre"		=>		$product_title,
-				"uniqueId"      =>      $prod_id
+				"uniqueId"      =>      $prod_id,
+				"imageThumb"    =>      $product_thumb
 			);
 			
 			$carrito->add($articulo);
@@ -62,7 +64,7 @@ function addProductCart(){
 				$precio_producto = $producto['precio'];
 				$cantidad_producto = $producto['cantidad'];
 				$id_producto_enc = $producto['id'];
-				$nombre_producto = substr($nombre_producto, 0, 27).'...';
+				$nombre_producto = substr($nombre_producto, 0, 26).'...';
 				echo"
 				<span>
 					<span class='quitar' onclick='deleteItem($id_producto_enc)'>x</span> 
@@ -70,7 +72,7 @@ function addProductCart(){
 				</span>
 				";
 			}
-			echo"<span class='pay'>Pagar</span>";
+			echo"<span class='pay'><a class='pay' href='/order.php'>Pagar</a></span>";
 			echo"</div>";
 		}else{
 			echo"
@@ -116,7 +118,7 @@ function deleteCartItem(){
 				$precio_producto = $producto['precio'];
 				$cantidad_producto = $producto['cantidad'];
 				$id_producto_enc = $producto['id'];
-				$nombre_producto = substr($nombre_producto, 0, 27).'...';
+				$nombre_producto = substr($nombre_producto, 0, 26).'...';
 				echo"
 				<span>
 					<span class='quitar' onclick='deleteItem($id_producto_enc)'>x</span> 
@@ -124,7 +126,7 @@ function deleteCartItem(){
 				</span>
 				";
 			}
-			echo"<span class='pay'>Pagar</span>";
+			echo"<span class='pay'><a class='pay' href='/order.php'>Pagar</a></span>";
 			echo"</div>";
 		}else{
 			echo"

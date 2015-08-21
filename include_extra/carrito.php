@@ -18,7 +18,7 @@
 						$precio_producto = $producto["precio"];
 						$cantidad_producto = $producto["cantidad"];
 						$id_producto_enc = $producto["id"];
-						$nombre_producto = substr($nombre_producto, 0, 27)."...";
+						$nombre_producto = substr($nombre_producto, 0, 26)."...";
 						echo"
 						<span>
 							<span class='quitar' onclick='deleteItem($id_producto_enc)'>x</span> 
@@ -26,7 +26,7 @@
 						</span>
 						";
 					}
-					echo"<span class='pay'>Pagar</span>";
+					echo"<span class='pay'><a class='pay' href='/order.php'>Pagar</a></span>";
 					echo"</div>";
 				}else{
 					echo"
