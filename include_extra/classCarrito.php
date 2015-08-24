@@ -27,7 +27,7 @@ class Carrito
 		//array lanzamos una excepción y cortamos la ejecución
 		if(!is_array($articulo) || empty($articulo))
 		{
-			throw new Exception("Error, el articulo no es un array!", 1);	
+			throw new Exception("Error, el artículo no es un array!", 1);	
 		}
  
 		 
@@ -82,7 +82,7 @@ class Carrito
 		//array lanzamos una excepción y cortamos la ejecución
 		if(!is_array($articulo) || empty($articulo))
 		{
-			throw new Exception("Error, el articulo no es un array!", 1);	
+			throw new Exception("Error, el artículo no es un array!", 1);	
 		}
  
 		 

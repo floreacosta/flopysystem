@@ -60,11 +60,12 @@ section.details>div>span>ul {
     padding: 0em 1em;
 }
 
-section.details>div>span>ul>li {
+section.details>div>span>p {
     text-transform: none;
     text-align: left;
     line-height: 1.5em;
     font-size: 1.2em;
+    list-style: none;
 }
 
 section.details>div>span>div.precio {
@@ -92,6 +93,8 @@ section.details>div>span>div.precio>form>input[type="submit"] {
 }
 
 span.addButton{
+    display: inline-block;
+    margin-top: 1em;
     background-color: #E54016;
     border: 0;
     color: #fff;

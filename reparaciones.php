@@ -24,7 +24,7 @@ include("/include_extra/header.php");
 			<p>¡Pedinos un presupuesto o comentanos tu problema y a la brevedad te respondemos con la mejor solución para vos!</p>
 			<p>Contamos con un técnico en reparaciones exclusivo que trabaja constantemente en nuestro local a fin de cumplir con todos los encargos.</p>
 			<div>
-				<aside>Escribinos!</aside><a href="mailto:reparaciones@flopysystem.com.ar">reparaciones@flopysystem.com.ar</a>
+				<aside>Llamanos!</aside><a href="#">Tel. / Fax (011) 4639-3713</a>
 			</div>
 		</span>
 	</div>

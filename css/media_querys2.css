@@ -440,6 +440,12 @@ section.details>div>span {
     max-width: 45%;
 }
 
+section.details>div>span>p {
+    -webkit-column-count: 2;
+	column-count: 2;
+	-moz-column-count: 2;
+}
+
 section.details>div>span>div>h1 {
     display: inline-block;
 }

@@ -5,7 +5,7 @@
 		<div>
 			<span>
 				<span class='quitar' onclick='showHideCart()'>/</span> 
-				<p>Carrito de compras</p><p class="carrito">.</p>
+				<p class="rollover-carrito">Carrito de compras</p><p class="carrito">.</p>
 			</span>
 			<?php 
 				$carrito = new Carrito();			
