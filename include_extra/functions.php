@@ -131,7 +131,7 @@ function getSeccionPorCategoriaMenu(){
 						<h1>$producto_titulo</h1>
 						<div>
 							<p>Precio web: $$producto_precio</p>
-							<a href='/details.php?id=$producto_id&nombreSec=$tituloSeccion'>+</a>
+							<a href='/details.php?id=$producto_id&nombreSec=$tituloSeccion'>e</a>
 						</div>
 						<button>Agregar al carrito</button>
 					</figcaption>
@@ -243,7 +243,7 @@ function busqueda(){
 		
 		if(!$encontro){
 			echo"
-				<h1>NO SE ENCONTRARON RESULTADOS PARA SU BUSQUEDA</h1>
+				<h1>NO SE ENCONTRARON RESULTADOS PARA SU BÚSQUEDA.</h1>
 			";
 		}
 	}
