@@ -131,7 +131,7 @@ function getSeccionPorCategoriaMenu(){
 						<h1>$producto_titulo</h1>
 						<div>
 							<p>Precio web: $$producto_precio</p>
-							<a href='/details.php?id=$producto_id&nombreSec=$tituloSeccion'>e</a>
+							<a href='/details.php?id=$producto_id&nombreSec=$tituloSeccion'>+</a>
 						</div>
 						<button>Agregar al carrito</button>
 					</figcaption>
@@ -177,10 +177,7 @@ function showDetalleProducto(){
 					</div>	
 					
 					<span>
-						<div>
-							<h1>$producto_titulo</h1>
-							<img src='/img/style/$producto_stock'/>
-						</div>
+						<h1>$producto_titulo<img src='/img/style/$producto_stock'/></h1>
 						
 						<p>$producto_detalles</p>
 						
@@ -236,6 +233,7 @@ function busqueda(){
 							<p>Precio web: $$producto_precio</p>
 							<a href='/details.php?id=$producto_id&nombreSec=' title='Detalles'>e</a>
 						</div>
+						<button>Agregar al carrito</button>
 					</figcaption>
 				</figure>				
 			";

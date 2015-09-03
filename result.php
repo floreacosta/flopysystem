@@ -33,6 +33,6 @@
 
 </div>
 </section>
-<div class="footer-into">
+<div class="search">
 	<?php include 'footer.php'; ?>
 </div>

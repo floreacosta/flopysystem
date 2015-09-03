@@ -23,7 +23,7 @@ include_once("/include_extra/head.php");
 	</div>
 </section>
 
-<div class="footer-into">
+<div class="search">
 <?php 
 	include_once 'include_extra/footer.php'; 
 ?>

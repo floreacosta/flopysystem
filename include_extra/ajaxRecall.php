@@ -105,7 +105,7 @@ function deleteCartItem(){
 		echo"
 		<div>
 			<span>
-				<span class='quitar' onclick='showHideCart()'>v</span> 
+				<span class='quitar' onclick='showHideCart()'>/</span> 
 				<p>Carrito de compras</p><p class='carrito'>.</p>
 			</span>		
 		";
@@ -216,7 +216,7 @@ function changeCantProd(){
 				<input type='email' name='correo' placeholder='Mail*'>
 			</form>
 			<form class='pagar'>
-				
+				<input type='submit' name='buy-now' value='Pagar'>
 			</form>
 		</div>
 		
