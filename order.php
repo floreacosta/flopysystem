@@ -57,15 +57,33 @@ include("/include_extra/header.php");
 			<h1>Total: $
 			<?php 
 			$carrito = new Carrito();
-			echo $carrito->precio_total();
+			$total = $carrito->precio_total();
+			echo $total;
+			$referenceCode = "AKC".date("hsi");
+			//ApiKey~merchantId~referenceCode~amount~currency
+			$signature = md5("6u39nqhq8ftd0hlvnjfs66eh8c~500238~$referenceCode~$total~ARS");
 			?>
 			</h1>
 			<form class="datos">
 				<input type="text" name="id" placeholder="Nombre y Apellido*">
 				<input type="email" name="correo" placeholder="Mail*">
 			</form>
-			<form class="pagar">
-				<input type="submit" name="buy-now" value="Pagar">
+			<form class="pagar" method="post" action="https://stg.gateway.payulatam.com/ppp-web-gateway/">
+				<input name="merchantId"    type="hidden"  value="500238" >
+				<input name="accountId"     type="hidden"  value="509171" >
+				<input name="description"   type="hidden"  value="Test PAYU"  >
+				<input name="referenceCode" type="hidden"  value="<?php echo $referenceCode ?>" >
+				<input name="amount"        type="hidden"  value="<?php echo $carrito->precio_total(); ?>"   >
+				<input name="tax"           type="hidden"  value="21"  >
+				<input name="taxReturnBase" type="hidden"  value="0" >
+				<input name="currency"      type="hidden"  value="ARS" >
+				<input name="signature"     type="hidden"  value="<?php echo $signature ?>">
+				<input name="test"          type="hidden"  value="1" >
+				<input name="buyerEmail"    type="hidden"  value="test@test.com" >
+				<input name="responseUrl"   type="hidden"  value="http://45.55.71.214/payUResponse.php" >
+				<input name="ApiLogin"    	type="hidden"  value="11959c415b33d0c" >		
+				<input name="ApiKey"    	type="hidden"  value="6u39nqhq8ftd0hlvnjfs66eh8c" >
+				<input name="Submit"        type="submit"  value="Pagar" >
 			</form>
 		</div>
 		
