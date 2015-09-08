@@ -64,16 +64,14 @@ include("/include_extra/header.php");
 			$signature = md5("6u39nqhq8ftd0hlvnjfs66eh8c~500238~$referenceCode~$total~ARS");
 			?>
 			</h1>
-			<form class="datos">
-				<input type="text" name="id" placeholder="Nombre y Apellido*">
-				<input type="email" name="correo" placeholder="Mail*">
-			</form>
-			<form class="pagar" method="post" action="https://stg.gateway.payulatam.com/ppp-web-gateway/">
+			<form class="pagar datos" method="post" action="https://stg.gateway.payulatam.com/ppp-web-gateway/">
+				<input name="payerFullName" type="text"    placeholder="Nombre y Apellido*">
+				<input name="buyerEmail"  	type="email"   placeholder="Mail*">
 				<input name="merchantId"    type="hidden"  value="500238" >
 				<input name="accountId"     type="hidden"  value="509171" >
-				<input name="description"   type="hidden"  value="Test PAYU"  >
+				<input name="description"   type="hidden"  value="<?php $carrito = new Carrito(); $carro = $carrito->get_content(); foreach($carro as $producto){ echo(" - ".ucfirst($producto["nombre"])." x".$producto["cantidad"]); }?>" >
 				<input name="referenceCode" type="hidden"  value="<?php echo $referenceCode ?>" >
-				<input name="amount"        type="hidden"  value="<?php echo $carrito->precio_total(); ?>"   >
+				<input name="amount"        type="hidden"  value="<?php echo $carrito->precio_total(); ?>" >
 				<input name="tax"           type="hidden"  value="21"  >
 				<input name="taxReturnBase" type="hidden"  value="0" >
 				<input name="currency"      type="hidden"  value="ARS" >

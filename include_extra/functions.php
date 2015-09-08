@@ -133,7 +133,15 @@ function getSeccionPorCategoriaMenu(){
 							<p>Precio web: $$producto_precio</p>
 							<a href='/details.php?id=$producto_id&nombreSec=$tituloSeccion'>+</a>
 						</div>
-						<button>Agregar al carrito</button>
+			";
+			if($producto_stock == 'yes.png'){
+				echo"<button onclick=addToCart($producto_id)>Agregar al carrito</button>";
+			}else{
+				echo'<button onclick=alert("Actualmente&nbsp;no&nbsp;hay&nbsp;stock&nbsp;del&nbsp;producto&nbsp;seleccionado")>Agregar al carrito</button>';
+			}
+			
+			
+			echo"		
 					</figcaption>
 				</figure>				
 			";
