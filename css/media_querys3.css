@@ -365,3 +365,54 @@ section.ubicacion>div>div>aside, section.ubicacion>div>div>aside>a {
 }
 
 }
+
+
+/*Thanks*/
+@media screen and (max-width: 500px){
+td {
+    height: 2.475em;
+	padding: 0em;
+}
+}
+
+@media screen and (min-width: 500px){
+section.thanks>form.formulario-envio {
+    width: 70%;
+    float: none;
+}
+
+section.thanks>form>div>ul>li>h2 {
+    float: left;
+    width: 6em;
+    text-align: right;
+    margin-top: 0.5em;
+}
+
+section.thanks>form>div>ul>li>input[type="text"] {
+    width: 60%;
+ }
+}
+
+@media screen and (min-width: 700px){
+section.thanks>form.formulario-envio {
+    width: 100%;
+}
+
+section.thanks>form.formulario-envio>div>ul {
+    width: 45%;
+    float: left;
+    margin: 0% 2.5%;
+}
+
+form.formulario-envio>input[type="submit"] {
+    font-size: 1.1em;
+}
+}
+
+@media screen and (min-width: 1060px){
+section.thanks>form.formulario-envio {
+    width: 65%;
+}
+}
+
+/*FIN Thanks*/

@@ -100,6 +100,7 @@ section.details-buy>section.total>div.carro>form.pagar>input[type="submit"] {
     padding: 0.3em 5em;
     border-radius: 2em;
     margin: 1em 0em;
+	cursor: pointer;
 }
 
 section.details-buy>section.total>div.carro>form.datos>input[placeholder="Nombre y Apellido*"],  section.details-buy>section.total>div.carro>form.datos>input[placeholder="Mail*"] {

@@ -381,20 +381,18 @@ footer>div>aside {
 /* fin footer */
 
 /* Thanks */
-section.thanks{
-	text-align: center;
-    margin: 3em;
+section.thanks {
+    text-align: center;
+    margin: 3em 1em 7em 1em;
+	max-width: 100%;
 }
 
 section.thanks>a>h2 {
-	border: solid 1px #E54016;
-    padding: 0.5em 0.5em 0.5em 0.9em;
-    border-radius: 2em;
     font-size: 1em;
-    letter-spacing: 0.5em;
-	color: #E54016;
-    max-width: 18em;
-    margin: 2em auto;
+}
+
+section.thanks>a>h2:hover {
+    color: #4c4c4c;
 }
 
 /*Carrito en todos lados*/
@@ -525,3 +523,92 @@ a.pay{
 	color: #fff !important;
 }
 /*Fin carrito en todos lados*/
+
+/*Inicio thanks*/
+section.thanks>h1 {
+    font-size: 2em;
+}
+
+table {
+    width: 48%;
+    float: left;
+    margin: 0em 1%;
+}
+
+td {
+    text-transform: none;
+    font-size: 1.05em;
+    font-family: Calibri, sans-serif;
+    letter-spacing: 0;
+	padding: 0.25em 0em;
+}
+
+table.head {
+    color: #4c4c4c;
+	text-align: right;
+}
+
+td.head{
+	color: #4c4c4c;
+}
+
+td.cod {
+    font-size: 1.4em;
+    padding-bottom: 1em;
+}
+
+section.thanks>div.info {
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 80%;
+}
+
+section.thanks>h2, section.thanks>p {
+    font-family: Calibri, sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #4c4c4c;
+}
+
+section.thanks>h2 {
+    margin: 1em;
+}
+
+section.thanks>p {
+    margin-bottom: 1.25em;
+}
+
+section.thanks>form>div>ul>li>input[type="text"] {
+    width: 100%;
+    padding: 0.5em;
+	margin: 0.25em 0em;
+    border: solid 1px;
+    border-radius: 0.5em;
+	-webkit-border-radius:0.5em;
+	}
+
+section.thanks>form>div>ul>li>h2 {
+    font-size: 1.1em;
+    text-transform: none;
+	color: #4C4C5C;
+}
+
+section.thanks>form.formulario-envio{
+    padding: 0;
+	margin: 1.5em 0em 1em 0em;
+    display: inline-block;
+    width: 100%;
+}
+
+form.formulario-envio>input[type="submit"] {
+    background-color: #e54018;
+    color: #fff;
+    border: 0;
+    text-align: center;
+    padding: 0.25em 1.3em;
+    border-radius: 2em;
+    -webkit-border-radius:2em;
+	margin: 1.5em 0em 0em 0em;
+    cursor: pointer;
+}

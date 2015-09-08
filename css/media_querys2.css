@@ -450,7 +450,7 @@ section.details>div>span {
 
 section.details>div>span>p {
     -webkit-columns: 10em 2;
-    -moz-columns: 10em 2;
+    -moz-columns: 2;
     columns: 10em 2;
 }
 
