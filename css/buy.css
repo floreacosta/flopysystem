@@ -91,6 +91,7 @@ section.details-buy>section.total>div.carro>form.datos>input[type="text"],  sect
     max-width: 100%;
     height: 2em;
 	width: 100%;
+    color: black;
 }
 
 section.details-buy>section.total>div.carro>form.pagar>input[type="submit"] {

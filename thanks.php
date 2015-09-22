@@ -15,7 +15,7 @@ include("/include_extra/head.php");
 	if(isset($_GET)){
 		$estadoTransaccion = $_GET['message'];
 		
-		if($estadoTransaccion == 'Declinada'){
+		if($estadoTransaccion == 'Declinado'){
 			echo"
 				<section class='thanks'>
 					<h1>El estado de tu pago es: $estadoTransaccion.</h1>
@@ -28,11 +28,16 @@ include("/include_extra/head.php");
 			$formaDePago = $_GET['lapPaymentMethodType'];
 			$montoTotal = $_GET['TX_VALUE'];
 			$tipoDePago = $_GET['lapPaymentMethod'];
+			$telefono = $_GET['telephone'];
 			$fecha = date("d/m/Y");
+			
+			if($formaDePago == 'CREDIT_CARD'){
+				$formaDePago = 'Tarjeta de crédito';
+				}
 			
 			echo"
 				<section class='thanks'>
-				<h1>El estado de tu pago es: $estadoTransaccion.</h1>
+				<h1>El estado del pago es: $estadoTransaccion.</h1>
 				
 				<div class='info'>
 					<table class='head'>
@@ -83,16 +88,16 @@ include("/include_extra/head.php");
 										<input type='text' value='$direccion' name='direccion' maxlength='50'></input>
 									</li>
 									<li>
-										<h2>Número</h2>
-										<input type='text' value='' name='altura' maxlength='6'></input>
-									</li>
-									<li>
 										<h2>Piso*</h2>
 										<input type='text' value='' name='piso' maxlength='2'></input>
 									</li>
 									<li>
 										<h2>Departamento*</h2>
 										<input type='text' value='' name='departamento' maxlength='2'></input>
+									</li>
+									<li>
+										<h2>Teléfono</h2>
+										<input type='text' value='$telefono' name='telefono' maxlength='7'></input>
 									</li>
 								</ul>	
 								<ul>
@@ -115,10 +120,10 @@ include("/include_extra/head.php");
 								</ul>
 							</div>				
 							<div class='clear'></div>
-							<input type='submit' value='Enviar' ></input>
+							<input type='submit' value='Enviar'></input>
 						</form>
 					</div>
-				<a href='/index.html'><h2>Página principal</h2></a>
+				<a href='/index.html'><h2>Home</h2></a>
 			</section>
 			";
 		}
