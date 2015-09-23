@@ -16,13 +16,15 @@ function menuDesplegable(){
 	//Aca empiezo a recorrer cada resultado de la tabla1
 	while($row_cats=mysqli_fetch_array($run_cats)){
 		
-		//Tomo las propiedades id y titulo de la tabla 1
+		//Tomo las propiedades id y titulo de las categorias de nivel 1
 		$cat_id = $row_cats['id_category1'];
 		$cat_title = $row_cats['category1_title'];
+		$cat_marca = $row_cats['marcaMenu'];
+		$style = ($cat_marca == 1) ? 'item' : ''; 
 		
-		//imprimo todos los titulos de la tabla1
+		//imprimo todos los titulos de las categorias de nivel 1
 		echo "  
-		<li id='$cat_title'>
+		<li class='$style' id='$cat_title'>
 			<a href='/product.php?id_categoria1=$cat_id&nombreSec=$cat_title'> $cat_title </a>
 		";
 		
@@ -44,17 +46,16 @@ function menuDesplegable(){
 			$cat2_id = $row_cats22['id_category2'];
 			$cat2_title = $row_cats22['category2_title'];
 			$cat1_id = $row_cats22['id_category1'];
+			$cat_marca2 = $row_cats22['marcaMenu'];
+			$style = ($cat_marca2 == 1) ? 'item' : ''; 
 		
 			//Hago una condición, si el id de referencia a la tabla1 es igual al id del ultimo
-			//resultado impreso (linea 37) lo imprimo, ya que el elemento es
+			//resultado impreso lo imprimo, ya que el elemento es
 			//hijo de el elemento impreso al principio
 
 			if($cat_id == $cat1_id){ 
 			echo "
-				<script>
-					$('#$cat_title').addClass('item');
-				</script>
-				<li id='$cat2_title'>
+				<li class='$style' id='$cat2_title'>
 					<a href='/product.php?id_categoria2=$cat2_id&nombreSec=$cat2_title'> $cat2_title </a>
 				";
 			echo "<ul>";
@@ -66,9 +67,6 @@ function menuDesplegable(){
 					if($cat2_id == $cat22_id){
 					//si coinciden los ID imprimo
 					echo "
-				<script>
-					$('#$cat2_title').attr('class', 'item');
-				</script>
 				<li>
 					<a href='/product.php?id_categoria3=$cat3_id&nombreSec=$cat3_title'> $cat3_title </a>
 				</li>";
@@ -361,9 +359,9 @@ function printOrder(){
 	
 	echo"
 		</h1>
-		<form class='pagar datos' method='post' action='https://stg.gateway.payulatam.com/ppp-web-gateway/'>
-			<input name='payerFullName' type='text'    placeholder='Nombre y Apellido*'>
-			<input name='buyerEmail'  	type='email'   placeholder='Mail*'>
+		<form id='formPayu' class='pagar datos' method='post' action='/test.php'>
+			<input name='payerFullName' type='text'    placeholder='Nombre y Apellido*' required>
+			<input name='buyerEmail'  	type='email'   placeholder='Mail*' required>
 			<input name='merchantId'    type='hidden'  value='500238' >
 			<input name='accountId'     type='hidden'  value='509171' >
 			<input name='description'   type='hidden'  value='$descripcion' >
@@ -374,7 +372,6 @@ function printOrder(){
 			<input name='currency'      type='hidden'  value='ARS' >
 			<input name='signature'     type='hidden'  value='$signature'>
 			<input name='test'          type='hidden'  value='1' >
-			<input name='buyerEmail'    type='hidden'  value='test@test.com' >
 			<input name='responseUrl'   type='hidden'  value='http://45.55.71.214/payUResponse.php' >
 			<input name='ApiLogin'    	type='hidden'  value='11959c415b33d0c' >		
 			<input name='ApiKey'    	type='hidden'  value='6u39nqhq8ftd0hlvnjfs66eh8c' >
