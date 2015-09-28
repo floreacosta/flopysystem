@@ -80,46 +80,47 @@ include("/include_extra/head.php");
 				
 					<h2>¡Importante!</h2>
 					<p>En caso de requerir el envío de la compra llenar el siguiente formulario y a la brevedad enviaremos el costo del despacho.</p>
-						<form class='formulario-envio' enctype='text/plain' method='get' action='mailto:ventas@flopysystem.com.ar'>
+						<form class='formulario-envio' method='post' action='envioData.php'>
 							<div>
 								<ul>
 									<li>
 										<h2>Dirección</h2>
-										<input type='text' value='$direccion' name='direccion' maxlength='50'></input>
+										<input type='text' value='$direccion' name='direccion' maxlength='50' required />
 									</li>
 									<li>
 										<h2>Piso*</h2>
-										<input type='text' value='' name='piso' maxlength='2'></input>
+										<input type='text' value='' name='piso' maxlength='2' required />
 									</li>
 									<li>
 										<h2>Departamento*</h2>
-										<input type='text' value='' name='departamento' maxlength='2'></input>
+										<input type='text' value='' name='departamento' maxlength='2' required />
 									</li>
 									<li>
 										<h2>Teléfono</h2>
-										<input type='text' value='$telefono' name='telefono' maxlength='7'></input>
+										<input type='text' value='$telefono' name='telefono' maxlength='7' required />
 									</li>
 								</ul>	
 								<ul>
 									<li>
 										<h2>Localidad</h2>
-										<input type='text' value='' name='localidad' maxlength='40'></input>
+										<input type='text' value='' name='localidad' maxlength='40' required />
 									</li>
 									<li>
 										<h2>Provincia</h2>
-										<input type='text' value='' name='provincia' maxlength='40'></input>
+										<input type='text' value='' name='provincia' maxlength='40' required />
 									</li>
 									<li>
 										<h2>Código Postal</h2>
-										<input type='text' value='' name='codigoPostal' maxlength='4'></input>
+										<input type='text' value='' name='codigoPostal' maxlength='4' required />
 									</li>
 									<li>
 										<h2>E-Mail</h2>
-										<input type='text' value='$mail' name='mail' maxlength='25'></input>
+										<input type='text' value='$mail' name='mail' maxlength='25' required />
 									</li>
 								</ul>
 							</div>				
 							<div class='clear'></div>
+							<input name='numeroPago' type='hidden' value='$numeroPago' />
 							<input type='submit' value='Enviar'></input>
 						</form>
 					</div>
