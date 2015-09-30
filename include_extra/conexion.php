@@ -1,9 +1,9 @@
 <?php	
 function callDb(){
 	$server = 'us76.toservers.com:3306';
-	$user = 'uv3721';
+	$user = 'florem10_mysql';
 	$pass = 'sudor503plano';
-	$bd = 'uv3721_carrito_compras';
+	$bd = 'florem10_carrito_compras';
 	
 	$db = mysqli_connect("$server","$user","$pass","$bd");
 	if(mysqli_connect_errno()){
