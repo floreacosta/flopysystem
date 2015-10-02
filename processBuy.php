@@ -1,13 +1,14 @@
 <?php
-include_once("/include_extra/head.php");
-include_once("/include_extra/conexion.php");
-include_once("/PHPMailer/class.phpmailer.php");
+include_once("include_extra/defines.php");
+include_once(RAIZ."/include_extra/head.php");
+include_once(RAIZ."/include_extra/conexion.php");
+include_once(RAIZ."/PHPMailer/class.phpmailer.php");
 ?>
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/details.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/media_querys3.css"/>
-	<script src="/js/ajaxFunctions.js"></script> 
-	<script src="/js/jquery1.11.3.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/details.css"/>
+    <link rel="stylesheet" type="text/css" href="css/media_querys3.css"/>
+	<script src="js/ajaxFunctions.js"></script> 
+	<script src="js/jquery1.11.3.js"></script> 
 </head>
 
 <body>
@@ -20,38 +21,6 @@ include_once("/PHPMailer/class.phpmailer.php");
 			$db = callDb();
 			$sql = "INSERT INTO usuarios (nombreApellido, email) VALUES ('$payerFullName', '$buyerEmail')";
 			$db->query($sql);
-			
-			$mail = new PHPMailer();
-			$mail->CharSet = 'UTF-8';
-			$mail->SMTPDebug     = false;            //true: para ver detalles del proceso. FALSE: no muestra nada
-			$mail->IsSMTP();					     //Setea que la aplicación se conecte al SMTP, si no se inicia va a obviar la variables de SMTP declaradas más abajo
-			$mail->SMTPKeepAlive = true;             // Close SMTP conn	
-			$mail->SMTPAuth   	 = true;             // enable SMTP authentication
-			$mail->Host       	 = "smtp.flopysystem.com.ar"; // SMTP server
-			$mail->Port       	 = 25;              // SMTP port 
-
-			// From
-			$mail->Username   = "venta-online@flopysystem.com.ar";  // FlopySystem username
-			$mail->Password   = "pochita..";   // GMAIL password	// FlopySystem Pass
-			$mail->From       = "venta-online@flopysystem.com.ar";	// FlopySystem username (lo pide dos veces, no se porque)
-			$mail->FromName   = "Fernando Prado"; // GMAIL name from // Nombre que aparece en el remitente del mail
-
-
-			$mail->Subject    = "TEST"; // Titulo 
-
-			$mail->AddAddress("fernando.prado@alconan.com.ar", "Fernando Prado"); // A quien se envia
-			
-			$mail->IsHTML(false);      // HTML
-			$mail->MsgHTML("TEST"); // HTML
-			if(!$mail->Send()){
-				echo "no mando";	
-			}else{
-				echo "mando";
-			}
-			
-			$mail->SmtpClose();
-			unset($mail);	
-			
 			
 			echo"
 			<h1>REDIRECCIONANDO A PAYU, ESPERE UNOS SEGUNDOS POR FAVOR</h1>
@@ -94,9 +63,9 @@ include_once("/PHPMailer/class.phpmailer.php");
 	?>
 
 	<script type="text/javascript">
-		/*window.onload = function() {
+		window.onload = function() {
 			$('#formPayu').submit();
-		}*/
+		}
 	</script>
 
 	<?php 
