@@ -16,7 +16,7 @@ function addToCart(str) {
             }
         }
 		console.log(xmlhttp.responseText);
-        xmlhttp.open("GET","/include_extra/ajaxRecall.php?q="+str+"&func=1",true);
+        xmlhttp.open("GET","include_extra/ajaxRecall.php?q="+str+"&func=1",true);
         xmlhttp.send();
     }
 }
@@ -39,7 +39,7 @@ function deleteItem(str) {
             }
         }
 		console.log(xmlhttp.responseText);
-        xmlhttp.open("GET","/include_extra/ajaxRecall.php?q="+str+"&func=2",true);
+        xmlhttp.open("GET","include_extra/ajaxRecall.php?q="+str+"&func=2",true);
         xmlhttp.send();
     }
 }
@@ -62,7 +62,7 @@ function changeItemsCant(str, nuevaCant) {
             }
         }
 		console.log(xmlhttp.responseText);
-        xmlhttp.open("GET","/include_extra/ajaxRecall.php?q="+str+"&func=3&nuevaCant="+nuevaCant,true);
+        xmlhttp.open("GET","include_extra/ajaxRecall.php?q="+str+"&func=3&nuevaCant="+nuevaCant,true);
         xmlhttp.send();
     }
 }
@@ -85,7 +85,7 @@ function deleteItemOrder(str) {
             }
         }
 		console.log(xmlhttp.responseText);
-        xmlhttp.open("GET","/include_extra/ajaxRecall.php?q="+str+"&func=4",true);
+        xmlhttp.open("GET","include_extra/ajaxRecall.php?q="+str+"&func=4",true);
         xmlhttp.send();
     }
 }

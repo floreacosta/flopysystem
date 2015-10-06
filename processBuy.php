@@ -40,7 +40,7 @@ include_once(RAIZ."/PHPMailer/class.phpmailer.php");
 			$ApiLogin = $_POST['ApiLogin'];
 			$ApiKey = $_POST['ApiKey'];
 			echo"
-				<form id='formPayu' class='pagar datos' method='post' action='https://stg.gateway.payulatam.com/ppp-web-gateway/'>
+				<form id='formPayu' class='pagar datos' method='post' action='https://gateway.payulatam.com/ppp-web-gateway'>
 					<input name='payerFullName' type='hidden'  value='$payerFullName' >
 					<input name='buyerEmail'  	type='hidden'  value='$buyerEmail' >
 					<input name='merchantId'    type='hidden'  value='$merchantId' >

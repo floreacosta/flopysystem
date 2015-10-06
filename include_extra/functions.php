@@ -350,7 +350,7 @@ function printOrder(){
 	echo $total;
 	$referenceCode = "AKC".date("hsi");
 	//ApiKey~merchantId~referenceCode~amount~currency
-	$signature = md5("6u39nqhq8ftd0hlvnjfs66eh8c~500238~$referenceCode~$total~ARS");
+	$signature = md5("~~$referenceCode~$total~ARS");
 	$descripcion = null;
 	
 	$carrito = new Carrito(); 
@@ -366,19 +366,19 @@ function printOrder(){
 		<form id='formPayu' class='pagar datos' method='post' action='processBuy.php'>
 			<input name='payerFullName' type='text'    placeholder='Nombre y Apellido*' required>
 			<input name='buyerEmail'  	type='email'   placeholder='Mail*' required>
-			<input name='merchantId'    type='hidden'  value='500238' >
-			<input name='accountId'     type='hidden'  value='509171' >
+			<input name='merchantId'    type='hidden'  value='' >
+			<input name='accountId'     type='hidden'  value='' >
 			<input name='description'   type='hidden'  value='$descripcion' >
 			<input name='referenceCode' type='hidden'  value='$referenceCode' >
 			<input name='amount'        type='hidden'  value='$total' >
-			<input name='tax'           type='hidden'  value='21'  >
+			<input name='tax'           type='hidden'  value='0'  >
 			<input name='taxReturnBase' type='hidden'  value='0' >
 			<input name='currency'      type='hidden'  value='ARS' >
 			<input name='signature'     type='hidden'  value='$signature'>
-			<input name='test'          type='hidden'  value='1' >
-			<input name='responseUrl'   type='hidden'  value='http://45.55.71.214/payUResponse.php' >
-			<input name='ApiLogin'    	type='hidden'  value='11959c415b33d0c' >		
-			<input name='ApiKey'    	type='hidden'  value='6u39nqhq8ftd0hlvnjfs66eh8c' >
+			<input name='test'          type='hidden'  value='0' >
+			<input name='responseUrl'   type='hidden'  value='http://alconan.com.ar/thanks.php' >
+			<input name='ApiLogin'    	type='hidden'  value='' >		
+			<input name='ApiKey'    	type='hidden'  value='' >
 			<input name='Submit'        type='submit'  value='Pagar' >
 		</form>
 	</div>
